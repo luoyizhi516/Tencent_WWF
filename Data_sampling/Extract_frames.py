@@ -39,7 +39,7 @@ def main():
         
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--base', type=str, default='D:/WWF/data/top14-part3-raw/', help='dataset_store_dir')
+    parser.add_argument('--base', type=str, default='D:/WWF/data/top14-part4-raw/', help='dataset_store_dir')
     parser.add_argument('--start', type=int, default=0, help='start_folder')
     parser.add_argument('--end', type=int, default=15, help='end_folder')
 
