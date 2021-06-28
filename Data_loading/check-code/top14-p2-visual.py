@@ -26,13 +26,12 @@ def main():
     df=pd.read_csv(csv_file)
     data_set='D:/top14-dataset-part1/'
     box_num=0
-    cate_class=['baichunlu','chihu','gaoyuanshanchun','gaoyuantu','lanmaji','ma','malu','maoniu','mashe','person','xuebao','yang','yanyang','zanghu']
     for index, row in tqdm(df.iterrows()):
         timu_data=json.loads(row['题目数据'])
         pic_id=row['题目ID']
         file_path=data_set+timu_data['Path']
-        image_folder='D:/top14-dataset-part1-transformed/images/'
-        visual_folder='D:/top14-sup-transformed/visualization/'
+        
+        visual_folder='D:/WWF_Det/WWF_Data/Pos_Data/top14-part2/allset/visualizations/'
 
         if not os.path.exists(visual_folder): 
             os.makedirs(visual_folder, exist_ok = True)
@@ -62,7 +61,7 @@ def main():
                             class_name=str(value)
                             
 
-                            img=cv2ImgAddText(img, class_name , center_x,center_y,(0,255,255),20)
+                            img=cv2ImgAddText(img, class_name , int(topleft[0]),center_y,(0,255,255),20)
                         #img=cv2ImgAddText(img,str(pic_id),10,10,(0,0,0),30)
         if not os.path.exists(visual_folder+image_name):
             cv2.imwrite(visual_folder+image_name,img)
