@@ -5,9 +5,10 @@ import cv2,argparse
 def main():
     base,txt_path,start,end=opt.img_dir,opt.text_dir,opt.start,opt.end
     img_list=os.listdir(base)
-    txt_path='D:/check-list-part2/check1000-1100.txt'
+    txt_path=r'D:/WWF/data-check-list\check-list-part2/check0-33.txt'
     with open(txt_path, 'w') as f:
-        for i in img_list[1000:1100]:
+
+        for i in img_list[0:33]:
             img_dir=base+i
             print(img_dir)
     

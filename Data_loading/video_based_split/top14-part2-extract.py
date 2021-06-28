@@ -22,8 +22,8 @@ def main():
         timu_data=json.loads(row['题目数据'])
         pic_id=row['题目ID']
         file_path=data_set+timu_data['Path']
-        image_folder='D:/WWF\data/top14-sup-transformed/allset/images/'
-        text_folder='D:/WWF\data/top14-sup-transformed/allset/labels/'
+        image_folder='D:/WWF_Det/WWF_Data/top14-part2/allset/images/'
+        text_folder='D:/WWF_Det/WWF_Data/top14-part2/allset/labels/'
         if not os.path.exists(image_folder): 
             os.makedirs(image_folder, exist_ok = True)
         if not os.path.exists(text_folder): 
@@ -32,13 +32,14 @@ def main():
         
         cate=timu_data['Path'].split('/')[0]
         #image_name=cate+timu_data['Path'].split('/')[2]
+       
         image_name=str(pic_id)+'.jpg'
         label_dict=json.loads(row['标注答案'])
+        shutil.copyfile(file_path,image_folder+image_name)
         if len(label_dict.keys()):
             bboxes=label_dict['objects']
             img = cv2.imread(file_path)
             imgy,imgx=img.shape[:2]
-            shutil.copyfile(file_path,image_folder+image_name)
             txt_path=text_folder+os.path.splitext(image_name)[0]+'.txt'
             
             with open(txt_path, 'w') as f:

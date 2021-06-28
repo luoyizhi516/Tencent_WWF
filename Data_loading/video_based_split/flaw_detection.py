@@ -1,9 +1,11 @@
 # -*- coding: UTF-8 -*-
 import os
+from numpy.lib.type_check import _imag_dispatcher
 import pandas as pd
 import shutil
 import numpy as np
 import cv2
+
 from tqdm import tqdm
 import pyfastcopy
 import json,sklearn
@@ -12,18 +14,57 @@ from sklearn.model_selection import train_test_split
 
 
 def main():
-    image_base,label_base='D:/WWF/data/top14-part1-transformed/allset/images/','D:/WWF/data/top14-part1-transformed/allset/labels/'
-    x,y=os.listdir(image_base),os.listdir(label_base)
-    drop_list_x=np.unique(np.array([line2.replace('\n','',1)+'.jpg' for line2 in open("D:\WWF\data-check-list\check_list\check-all.txt")])).tolist()
-    drop_list_y=np.unique(np.array([line2.replace('\n','',1)+'.txt' for line2 in open("D:\WWF\data-check-list\check_list\check-all.txt")])).tolist()
-    print("Allset image number "+str(len(x)))
-    print("Defected label number! "+str(len(drop_list_x)))
+    Data_base=r"D:\WWF_Det\WWF_Data/"
     
+    dataset_name='top14-part2'
+    check_txt=r"D:/WWF_Det\WWF_Det\Drop_txt\top14-part2-drop.txt"
+    
+    #"D:\WWF\data-check-list\check_list\check-all.txt"
 
-    droped_x=[i for i in x if i not in drop_list_x]
+    image_base,label_base='D:/WWF_Det/WWF_Data/top14-part2/allset/images/','D:/WWF_Det/WWF_Data/top14-part2/allset/labels/'
     
-    droped_y=[i for i in y if i not in drop_list_y]
-    print("Actual droped number during data spliting! "+str(len(x)-len(droped_x)))
+    x,y=os.listdir(image_base),os.listdir(label_base)
+    img_id=[i.replace('.jpg','',1)for i in x]
+    txt_id=[i.replace('.txt','',1)for i in y]
+
+    err_id=np.unique(np.array([line.replace('\n','',1) for line in open(check_txt)])).tolist()
+
+    droped_id=[i for i in txt_id if i in err_id]
+    valuable_id=[i for i in txt_id if i not in err_id]
+    kongpai_id=[i for i in img_id if i not in txt_id]
+    fake_kongpai_id=[i for i in err_id if i not in droped_id]
+    true_kongpai_id=[i for i in kongpai_id if not i in fake_kongpai_id]
+    print("Allset Num: "+str(len(img_id)))
+    print("Valuablset Num: "+str(len(valuable_id)))
+    print("Defected Num: "+str(len(err_id)))
+    print('Kongpai Num: '+str(len(kongpai_id)))
+    print('Fake_kongpai Num: '+str(len(fake_kongpai_id)))
+    print('True Kongpai Num: '+str(len(true_kongpai_id)))
+
+    
+    assert len(img_id)==len(valuable_id)+len(err_id)+len(true_kongpai_id)
+    for i in valuable_id:
+        check_path=label_base+i+'.txt'
+        assert os.path.exists(check_path),check_path+' not exists'
+
+    print("Actual-droped Num: "+str(len(droped_id)))
+    x_dir='D:/WWF_Det/WWF_Data/'+dataset_name+'/valuableset/images/'
+    y_dir='D:/WWF_Det/WWF_Data/'+dataset_name+'/valuableset/labels/'
+    x_err='D:/WWF_Det/WWF_Data/'+dataset_name+'/errset/'
+    x_empty='D:/WWF_Det/WWF_Data/'+dataset_name+'/x_empty/'
+    if not os.path.exists(x_dir): os.makedirs(x_dir)
+    if not os.path.exists(y_dir): os.makedirs(y_dir)
+    if not os.path.exists(x_err): os.makedirs(x_err)
+
+    for ID in tqdm(valuable_id):
+        imgID=ID+'.jpg'
+        txtID=ID+'.txt'
+        shutil.copyfile(image_base+imgID,x_dir+imgID)
+        shutil.copyfile(label_base+txtID,y_dir+txtID)
+
+    for ID in tqdm(err_id):
+        imgID=ID+'.jpg'
+        shutil.copyfile(image_base+imgID,x_err+imgID)
    
 if __name__ == "__main__":
     
