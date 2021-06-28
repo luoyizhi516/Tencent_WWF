@@ -65,11 +65,11 @@ def main():
     x_dir='D:/WWF_Det/WWF_Data/'+dataset_name+'/valuableset/images/'
     y_dir='D:/WWF_Det/WWF_Data/'+dataset_name+'/valuableset/labels/'
     x_err='D:/WWF_Det/WWF_Data/'+dataset_name+'/errset/'
-    x_empty='D:/WWF_Det/WWF_Data/'+dataset_name+'/x_empty/'
+    x_empty='D:/WWF_Det/WWF_Data/'+dataset_name+'/emptyset/'
     if not os.path.exists(x_dir): os.makedirs(x_dir)
     if not os.path.exists(y_dir): os.makedirs(y_dir)
     if not os.path.exists(x_err): os.makedirs(x_err)
-
+    if not os.path.exists(x_empty): os.makedirs(x_empty)
     for ID in tqdm(valuable_id):
         imgID=ID+'.jpg'
         txtID=ID+'.txt'
@@ -79,7 +79,10 @@ def main():
     for ID in tqdm(err_id):
         imgID=ID+'.jpg'
         shutil.copyfile(image_base+imgID,x_err+imgID)
-    
+
+    for ID in tqdm(true_kongpai_id):
+        imgID=ID+'.jpg'
+        shutil.copyfile(image_base+imgID,x_empty+imgID)
    
 if __name__ == "__main__":
     
