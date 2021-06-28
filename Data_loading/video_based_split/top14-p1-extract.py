@@ -12,7 +12,7 @@ import json
 
 
 def main():
-    csv_file='C:/Users\luxiferchen\Downloads\物体检测标注-j22eo7_20210615211440003.csv'
+    csv_file="C:/Users\luxiferchen\Desktop\物体检测标注-s8ju82_20210610220912153.csv"
     df=pd.read_csv(csv_file)
     data_set='D:/top14-dataset-part1/'
     box_num=0
@@ -22,8 +22,8 @@ def main():
         timu_data=json.loads(row['题目数据'])
         pic_id=row['题目ID']
         file_path=data_set+timu_data['Path']
-        image_folder='D:/WWF_Det/WWF_Data/top14-part2/allset/images/'
-        text_folder='D:/WWF_Det/WWF_Data/top14-part2/allset/labels/'
+        image_folder='D:/WWF_Det/WWF_Data/Pos_Data/top14-part1/allset/images/'
+        text_folder='D:/WWF_Det/WWF_Data/Pos_Data/top14-part1/allset/labels/'
         if not os.path.exists(image_folder): 
             os.makedirs(image_folder, exist_ok = True)
         if not os.path.exists(text_folder): 

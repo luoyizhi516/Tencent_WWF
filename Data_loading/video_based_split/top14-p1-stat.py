@@ -16,12 +16,13 @@ from sklearn.model_selection import train_test_split
 
 def main():
     
-    dataset_name='top14-part2'
-    check_txt=r"D:/WWF_Det\WWF_Det\Drop_txt\top14-part2-drop.txt"
-    
+    dataset_name='top14-part1'
+    check_txt=r"D:/WWF_Det\WWF_Det\Drop_txt/top14-p1-all.txt"
+    stat_csv='D:/WWF_Det/WWF_Det/Dataset_stat/top14-part1-dataset-stat.csv'
+
     #"D:\WWF\data-check-list\check_list\check-all.txt"
 
-    image_base,label_base='D:/WWF_Det/WWF_Data/top14-part2/allset/images/','D:/WWF_Det/WWF_Data/top14-part2/allset/labels/'
+    image_base,label_base='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/allset/images/','D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/allset/labels/'
     
     x,y=os.listdir(image_base),os.listdir(label_base)
     img_id=[i.replace('.jpg','',1)for i in x]
@@ -42,6 +43,9 @@ def main():
     print('Fake_kongpai Num: '+str(len(fake_kongpai_id)))
     print('True Kongpai Num: '+str(len(true_kongpai_id)))
 
+    for i in valuable_id:
+        check_path=label_base+i+'.txt'
+        assert os.path.exists(check_path),check_path+' not exists'
     assert len(img_id)==len(valuable_id)+len(err_id)+len(true_kongpai_id), 'Number Mismatch!'
     assert len(kongpai_id)==len(fake_kongpai_id)+len(true_kongpai_id), 'Kongpai Num Mismatch!'
     for i in valuable_id:
@@ -61,11 +65,11 @@ def main():
         'Fake_Kongpai_Num':[len(fake_kongpai_id)]
     }
     df_store=pd.DataFrame(data)
-    df_store.to_csv('D:/WWF_Det/WWF_Det/Dataset_stat/top14-part2-dataset-stat.csv')
-    x_dir='D:/WWF_Det/WWF_Data/'+dataset_name+'/valuableset/images/'
-    y_dir='D:/WWF_Det/WWF_Data/'+dataset_name+'/valuableset/labels/'
-    x_err='D:/WWF_Det/WWF_Data/'+dataset_name+'/errset/'
-    x_empty='D:/WWF_Det/WWF_Data/'+dataset_name+'/emptyset/'
+    df_store.to_csv(stat_csv)
+    x_dir='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/valuableset/images/'
+    y_dir='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/valuableset/labels/'
+    x_err='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/errset/'
+    x_empty='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/emptyset/'
     if not os.path.exists(x_dir): os.makedirs(x_dir)
     if not os.path.exists(y_dir): os.makedirs(y_dir)
     if not os.path.exists(x_err): os.makedirs(x_err)
