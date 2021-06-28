@@ -1,4 +1,5 @@
 # -*- coding: UTF-8 -*-
+from math import e
 import os
 from numpy.lib.type_check import _imag_dispatcher
 import pandas as pd
@@ -14,7 +15,6 @@ from sklearn.model_selection import train_test_split
 
 
 def main():
-    Data_base=r"D:\WWF_Det\WWF_Data/"
     
     dataset_name='top14-part2'
     check_txt=r"D:/WWF_Det\WWF_Det\Drop_txt\top14-part2-drop.txt"
@@ -34,6 +34,7 @@ def main():
     kongpai_id=[i for i in img_id if i not in txt_id]
     fake_kongpai_id=[i for i in err_id if i not in droped_id]
     true_kongpai_id=[i for i in kongpai_id if not i in fake_kongpai_id]
+    
     print("Allset Num: "+str(len(img_id)))
     print("Valuablset Num: "+str(len(valuable_id)))
     print("Defected Num: "+str(len(err_id)))
@@ -41,13 +42,26 @@ def main():
     print('Fake_kongpai Num: '+str(len(fake_kongpai_id)))
     print('True Kongpai Num: '+str(len(true_kongpai_id)))
 
-    
-    assert len(img_id)==len(valuable_id)+len(err_id)+len(true_kongpai_id)
+    assert len(img_id)==len(valuable_id)+len(err_id)+len(true_kongpai_id), 'Number Mismatch!'
+    assert len(kongpai_id)==len(fake_kongpai_id)+len(true_kongpai_id), 'Kongpai Num Mismatch!'
     for i in valuable_id:
         check_path=label_base+i+'.txt'
         assert os.path.exists(check_path),check_path+' not exists'
-
+    
     print("Actual-droped Num: "+str(len(droped_id)))
+    data={
+        'Dataname':[dataset_name],
+        'Allset_Num':[len(img_id)],
+        'Valuable_Num':[len(valuable_id)],
+        'Error_Num':[len(err_id)],
+        'Actual_Kongpai_Num':[len(true_kongpai_id)],
+        'UnKongpai_Num':[len(txt_id)],
+        'Droped_unKongpai_Num':[len(droped_id)],
+        'Kongpai_Num':[len(kongpai_id)],
+        'Fake_Kongpai_Num':[len(fake_kongpai_id)]
+    }
+    df_store=pd.DataFrame(data)
+    df_store.to_csv('D:/WWF_Det/WWF_Det/Dataset_stat/top14-part2-dataset-stat.csv')
     x_dir='D:/WWF_Det/WWF_Data/'+dataset_name+'/valuableset/images/'
     y_dir='D:/WWF_Det/WWF_Data/'+dataset_name+'/valuableset/labels/'
     x_err='D:/WWF_Det/WWF_Data/'+dataset_name+'/errset/'
@@ -65,6 +79,7 @@ def main():
     for ID in tqdm(err_id):
         imgID=ID+'.jpg'
         shutil.copyfile(image_base+imgID,x_err+imgID)
+    
    
 if __name__ == "__main__":
     
