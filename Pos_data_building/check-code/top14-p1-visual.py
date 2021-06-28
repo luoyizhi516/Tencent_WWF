@@ -22,7 +22,7 @@ def cv2ImgAddText(img, text, left, top, textColor=(0, 255, 0), textSize=20):
 
 
 def main():
-    csv_file="C:/Users\luxiferchen\Desktop\物体检测标注-s8ju82_20210610220912153.csv"
+    csv_file='D:/WWF_Det/WWF_Det/Raw_annoations/top14-part1.csv'
     df=pd.read_csv(csv_file)
     data_set='D:/top14-dataset-part1/'
     box_num=0
