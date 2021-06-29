@@ -22,7 +22,7 @@ def cv2ImgAddText(img, text, left, top, textColor=(0, 255, 0), textSize=20):
 
 def main():
     base='D:/WWF_Det/WWF_Data/Raw_Data/top14-all/'
-    df_store=pd.DataFrame(columns=['video_path','cate','modality'])
+    
     for cate in tqdm(os.listdir(base)):
         cate_base=base+cate+'/videos/'
         modality_base=base+cate+'/modality/'
