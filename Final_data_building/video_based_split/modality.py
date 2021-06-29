@@ -11,7 +11,6 @@ import json
 from xml.etree import ElementTree
 from PIL import Image, ImageDraw, ImageFont
 def cv2ImgAddText(img, text, left, top, textColor=(0, 255, 0), textSize=20):
-    # 判断是否为opencv图片类型
     if (isinstance(img, np.ndarray)):
         img = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
     draw = ImageDraw.Draw(img)
@@ -22,30 +21,43 @@ def cv2ImgAddText(img, text, left, top, textColor=(0, 255, 0), textSize=20):
 
 
 def main():
-    base='D:/WWF_Det/WWF_Data/Raw_Data/top14-p1-p2-p3-merged/chihu/videos/'
+    base='D:/WWF_Det/WWF_Data/Raw_Data/top14-all/xuebao/videos/'
     save_dir='D:/WWF_Det/WWF_Data/Raw_Data/top14-p1-p2-p3-merged/video_stat.csv'
 
-    for i in os.listdir(base):
+    for i in os.listdir(base)[330:331]:
         vid=base+i
         
         cap = cv2.VideoCapture(vid)  
+        # ret, frame = cap.read()
+        # print(frame.dtype)
+        # print(frame.shape)
+        # print(frame.itemsize)
+        # print(np.max(frame))
+        # b, g, r = cv2.split(frame)
+        # b,g,r=b.reshape(-1),g.reshape(-1),r.reshape(-1)
+        # print(np.mean(b-g))
+        # cv2.imshow(frame)
+        # k = cv2.waitKey(0)  
+        #q键退出
+        # if (k & 0xff == ord('q')):  
+        #     break  
+        
+        # while 1:  
+        #     ret, frame = cap.read()
+        #     if ret:
+        #         b, g, r = cv2.split(frame)
 
-        while 1:  
-            ret, frame = cap.read()
-            if ret:
-                b, g, r = cv2.split(frame)
-
-                modality='rgb'
-                b,g,r=b.reshape(-1),g.reshape(-1),r.reshape(-1)
-                if np.mean(b-g)<5:
-                    modality="gray"
-                frame=cv2ImgAddText(frame, modality , 50,50,(0,255,255),20)
-                cv2.imshow('image', frame)  
-                k = cv2.waitKey(30)  
-                #q键退出
-                if (k & 0xff == ord('q')):  
-                    break  
-            else: break
+        #         modality='rgb'
+        #         b,g,r=b.reshape(-1),g.reshape(-1),r.reshape(-1)
+        #         if np.mean(b-g)<5:
+        #             modality="gray"
+        #         frame=cv2ImgAddText(frame, modality , 50,50,(0,255,255),20)
+        #         cv2.imshow('image', frame)  
+        #         k = cv2.waitKey(30)  
+        #         #q键退出
+        #         if (k & 0xff == ord('q')):  
+        #             break  
+        #     else: break
         cap.release()  
         cv2.destroyAllWindows()
 if __name__ == "__main__":
