@@ -22,26 +22,31 @@ def cv2ImgAddText(img, text, left, top, textColor=(0, 255, 0), textSize=20):
 
 
 def main():
-    base='D:/WWF_Det\WWF_Data\Raw_Data/top14-p1-p2-p3-merged\baichunlu/videos/'
-    for i in base:
-        vid=base+i
-        cap=cv2.VideoCapture(vid)
-        while (cap.isOpened()):
-            ret, frame = cap.read()
-            if(frame.shape[2]==1):
+    base='D:/WWF_Det/WWF_Data/Raw_Data/top14-p1-p2-p3-merged/chihu/videos/'
+    save_dir='D:/WWF_Det/WWF_Data/Raw_Data/top14-p1-p2-p3-merged/video_stat.csv'
 
-                modality ='Gray'
-            if(frame.shape[2] == 3):
-                modality ='RGB'
-                
-            frame=cv2ImgAddText(frame, modality , 50,50,(0,255,255),20)
-            cv2.imshow(frame)
-            k=cv2.waitKey(0)
-            if k & 0xFF == ord('q'):
-                cv2.destroyAllWindows()
-                break
-                        #img=cv2ImgAddText(img,str(pic_id),10,10,(0,0,0),30)
-       
-    #return df_store
+    for i in os.listdir(base):
+        vid=base+i
+        
+        cap = cv2.VideoCapture(vid)  
+
+        while 1:  
+            ret, frame = cap.read()
+            if ret:
+                b, g, r = cv2.split(frame)
+
+                modality='rgb'
+                b,g,r=b.reshape(-1),g.reshape(-1),r.reshape(-1)
+                if np.mean(b-g)<5:
+                    modality="gray"
+                frame=cv2ImgAddText(frame, modality , 50,50,(0,255,255),20)
+                cv2.imshow('image', frame)  
+                k = cv2.waitKey(30)  
+                #q键退出
+                if (k & 0xff == ord('q')):  
+                    break  
+            else: break
+        cap.release()  
+        cv2.destroyAllWindows()
 if __name__ == "__main__":
     main()
