@@ -76,9 +76,9 @@ def main():
                 else: modality="RGB"
         
             data_dict['modality'].append(modality)
-            #frame=cv2ImgAddText(frame, modality , 100,100,(255,0,0),50)
+            frame=cv2ImgAddText(frame, modality , 100,100,(255,0,0),50)
 
-            #cv2.imwrite(modality_base+vid_name[:-4]+'.jpg',frame)
+            cv2.imwrite(modality_base+vid_name[:-4]+'.jpg',frame)
     df=pd.DataFrame(data_dict)
     df.to_csv(df_path,index=False)
     df=pd.read_csv(df_path)
