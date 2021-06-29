@@ -1,2 +1,3 @@
 # Tencent_WWF
- The animal detection code for World Wildlife Foundation as the purpose of animal monitor.
+
+Tencent_WWF is the repo base for animal surveillance project cooperated with Tencent and World Wildlife Foundation.
