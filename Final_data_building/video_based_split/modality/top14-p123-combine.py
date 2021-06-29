@@ -39,11 +39,11 @@ def cv2ImgAddText(img, text, left, top, textColor=(0, 255, 0), textSize=20):
     return cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2BGR)
 
 def main():
-    base='D:/WWF_Det/WWF_Data/Raw_Data/top14-all/'
-    dataset_name='top14-all/'
+    base='D:/WWF_Det/WWF_Data/Raw_Data/top14-p1-p2-p3-merged/'
+    dataset_name='top14-p1-p2-p3-merged/'
     save_base='D:/WWF_Det/WWF_Det/Raw_data_stat/'+dataset_name
     if not os.path.exists(save_base):os.makedirs(save_base)
-    df_path=save_base+'top14-all-combine.csv'
+    df_path=save_base+'top14-p123-combine.csv'
     data_dict={
         'video_path':[],
         'cate':[],

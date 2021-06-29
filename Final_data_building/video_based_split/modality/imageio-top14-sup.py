@@ -31,7 +31,7 @@ def imageio_stat(video_path):
 def main():
     dataset_name='top14-all/'
     save_base='D:/WWF_Det/WWF_Det/Raw_data_stat/'+dataset_name
-    df_path=save_base+'top14-all-pos.csv'
+    df_path=save_base+'top14-all-modality.csv'
     df_pos=save_base+'top14-all-pos.csv'
     df=pd.read_csv(df_path)
     null_df=df[df.isnull().T.any()]
@@ -46,6 +46,6 @@ def main():
             df.loc[index,'modality']=modality
 
     print(df[df.isnull().T.any()])
-    #df.to_csv(df_pos,index=False)
+    df.to_csv(df_pos,index=False)
 if __name__ == "__main__":
     main()

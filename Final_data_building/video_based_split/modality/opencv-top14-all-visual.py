@@ -21,7 +21,7 @@ def cv2ImgAddText(img, text, left, top, textColor=(0, 255, 0), textSize=20):
 
 def main():
     base='D:/WWF_Det/WWF_Data/Raw_Data/top14-all/'
-    for cate in tqdm(os.listdir(base)[1:4]):
+    for cate in tqdm(os.listdir(base)):
         cate_base=base+cate+'/videos/'
         modality_base=base+cate+'/modality/'
         if not os.path.exists(modality_base): os.makedirs(modality_base)
@@ -32,7 +32,6 @@ def main():
             if not ret: print(vid)
             if ret:
                 b, g, r = cv2.split(frame)
-                b,g,r=b.reshape(-1),g.reshape(-1),r.reshape(-1)
                 if np.mean(b-g)<5:
                     modality="Infra"
                 else: modality="RGB"
