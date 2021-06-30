@@ -11,7 +11,9 @@ def stat_count(dir):
     df_store=pd.DataFrame(columns=['Categories','Path','Frames'])
     modify_class=['misssing','wufashibei','gongzuorengyuan','qitarenyuan','konpai','gongzuorenyuan','hongzuiya']
     modified_class=['missing','wufashibie','person','person','kongpai','person','hongzuishanya']
-    drop_class=['cuowu','wufashibie','kongpai','missing','banchunlu','yanyang:konpai']
+    #drop_class=['cuowu','wufashibie','kongpai','missing','banchunlu','yanyang:konpai']
+    drop_class=['cuowu','wufashibie','missing','banchunlu','yanyang:konpai']
+
     for csv in csv_list:
         df=pd.read_csv(dir+csv)
         for a,b in zip(modify_class,modified_class):
@@ -43,17 +45,18 @@ def stat_count(dir):
 
 
 def main():
-    new_df=stat_count('E:\All_CSV\csv/')[29:]
+    new_df=stat_count('F:\All_CSV\csv/')[:1]
     print(new_df)
     for cate,file_list in tqdm(zip(new_df['Categories'].values,new_df['Path'].values)):
-        image_folder='D:/rest-dataset/'+cate+'/images/'
-        video_folder='D:/rest-dataset/'+cate+'/videos/'
+        image_folder='D:/WWF_Det/WWF_Data/Raw_Data/'+cate+'/images/'
+        video_folder='D:/WWF_Det/WWF_Data/Raw_Data/'+cate+'/videos/'
         if not os.path.exists(image_folder):
             os.makedirs(image_folder)
         if not os.path.exists(video_folder):
             os.makedirs(video_folder)
         count_image=0
         count_video=0
+        
         for mini_list in tqdm(file_list):
             source_list=mini_list[1:-1].split(',')
             for s_item in source_list:
@@ -62,18 +65,21 @@ def main():
                     count_image+=1
                     target=image_folder+'%05d' % (count_image) +os.path.splitext(source)[1]
                     if not os.path.exists(target):
-                        #shutil.copyfile(source,target)
+                        source=source.replace('E:','F:\Raw_Dataset',1)
+                        shutil.copyfile(source,target)
                         k=0
                 elif source.lower().strip().endswith('.mov') or source.lower().strip().endswith('.avi') or source.lower().strip().endswith('.mp4'):
                     count_video+=1
                     target=video_folder+'%05d' % (count_video) +os.path.splitext(source)[1]
                     if not os.path.exists(target):
-                        #shutil.copyfile(source,target)
+                        source=source.replace('E:','F:\Raw_Dataset',1)
+                        shutil.copyfile(source,target)
                         k=0
                 else:
                     print((os.path.splitext(source)[1])[-3:])
                 
                 #shutil.copyfile(source,target)
                 #print(target)
+   
 if __name__ == "__main__":
     main()

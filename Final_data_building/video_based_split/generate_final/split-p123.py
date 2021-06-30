@@ -23,7 +23,7 @@ def main():
     split_file='D:/WWF_Det/WWF_Det/Final_data_stat/top14-p123/img_split.csv'
     Final_data_base='D:/WWF_Det/WWF_Data/Final_Data/top14-p123/'
     train_img_dir,train_txt_dir=Final_data_base+'/train/images/',Final_data_base+'/train/labels/'
-    test_img_dir,test_txt_dir=Final_data_base+'/test/images/',Final_data_base+'/test/labels/'
+    test_img_dir,test_txt_dir=Final_data_base+'/val/images/',Final_data_base+'/val/labels/'
     if not os.path.exists(train_img_dir):os.makedirs(train_img_dir)
     if not os.path.exists(train_txt_dir):os.makedirs(train_txt_dir)
     if not os.path.exists(test_img_dir):os.makedirs(test_img_dir)
