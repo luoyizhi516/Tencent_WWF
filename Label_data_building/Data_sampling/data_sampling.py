@@ -34,7 +34,8 @@ def main():
         droped_video=[i for i in allset_video if i not in subset_video]
         random.shuffle(droped_video)
         sample_range_max=min(sample_range[1],len(droped_video))
-        sample_video=droped_video[sample_range[0]:sample_range_max]
+        sample_range_min=min(sample_range_max,sample_range[0])
+        sample_video=droped_video[sample_range_min:sample_range_max]
 
         #print(sample_video)
         newset_base='D:/WWF_Det/WWF_Data/Raw_Data/top14-p5/'
