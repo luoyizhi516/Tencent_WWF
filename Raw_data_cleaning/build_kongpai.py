@@ -50,8 +50,8 @@ def main():
     new_df=stat_count('F:\All_CSV\csv/')[:1]
     print(new_df)
     for cate,file_list in tqdm(zip(new_df['Categories'].values,new_df['Path'].values)):
-        image_folder='D:/WWF_Det/WWF_Data/Raw_Data/'+cate+'/images/'
-        video_folder='D:/WWF_Det/WWF_Data/Raw_Data/'+cate+'/videos/'
+        image_folder='E:/WWF_Det/WWF_Data/Raw_Data/empty/'+cate+'/images/'
+        video_folder='E:/WWF_Det/WWF_Data/Raw_Data/empty/'+cate+'/videos/'
         if not os.path.exists(image_folder):
             os.makedirs(image_folder)
         if not os.path.exists(video_folder):
@@ -87,7 +87,7 @@ def main():
         random.shuffle(all_source_list)
         num_vid=0
         
-        for source in all_source_list[:300]:
+        for source in all_source_list[:3000]:
             num_vid+=1
             target=video_folder+'%05d' % (num_vid) +os.path.splitext(source)[1]
             shutil.copyfile(source,target)

@@ -13,11 +13,11 @@ from sklearn.model_selection import train_test_split
 
 
 def main():
-    sample_range=[30,60]
+    sample_range=[60,90]
     #This is the base for all raw dataset that is subjected to be labeled
-    allset_base='D:/top14-dataset/'
+    allset_base='D:/WWF_Det\WWF_Data\Raw_Data/top14-all/'
     #This is the base for the subset that is already label and will be droped later
-    subset_base='D:/top14-dataset-part1/'
+    subset_base='D:/WWF_Det\WWF_Data\Raw_Data/top14-p1-p2/'
 
     allset_cate_list=os.listdir(allset_base)
     #subset_cate_list=os.listdir(subset_base)
@@ -33,8 +33,11 @@ def main():
         random.seed(2021)
         droped_video=[i for i in allset_video if i not in subset_video]
         random.shuffle(droped_video)
-        sample_video=droped_video[sample_range[0]:sample_range[1]]
-        newset_base='D:/WWF/data/top14-part4-raw/'
+        sample_range_max=min(sample_range[1],len(droped_video))
+        sample_video=droped_video[sample_range[0]:sample_range_max]
+
+        #print(sample_video)
+        newset_base='D:/WWF_Det/WWF_Data/Raw_Data/top14-p5/'
         newset_cate_video_dir=newset_base+cate+'/videos/'
         if not os.path.exists(newset_cate_video_dir): os.makedirs(newset_cate_video_dir)
         for vid in sample_video:
