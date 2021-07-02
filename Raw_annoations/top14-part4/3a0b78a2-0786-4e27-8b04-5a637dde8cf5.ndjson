@@ -1,0 +1,302 @@
+{"@timestamp":"2021-07-02 11:07:27.876","@message":"I0702 03:07:27.876705       7 polaris.go:50] sync instance is id=c670faff74d8ff1359af19a645b00f7518571613, address=9.97.81.72:80"}
+{"@timestamp":"2021-07-02 11:07:27.876","@message":"I0702 03:07:27.876722       7 polaris.go:51] success to sync get one instance"}
+{"@timestamp":"2021-07-02 11:07:34.564","@message":"I0702 03:07:34.563839       8 server.go:62] Scoping operator to namespace teg-ailab-cvc-chongqing"}
+{"@timestamp":"2021-07-02 11:07:34.569","@message":"I0702 03:07:34.569714       8 server.go:66] [API Version: v1alpha2 Version: v0.1.0-alpha Git SHA: Not provided. Built: Not provided. Go Version: go1.13.6 Go OS/Arch: linux/amd64]"}
+{"@timestamp":"2021-07-02 11:07:34.569","@message":"I0702 03:07:34.569731       8 server.go:69] Server options: &{Kubeconfig: MasterURL: Threadiness:2 PrintVersion:false Namespace:teg-ailab-cvc-chongqing}"}
+{"@timestamp":"2021-07-02 11:16:57.560","@message":"I0702 03:16:57.559912       7 polaris.go:50] sync instance is id=ae85a1a38a3564ae5493b27fbbf2a0d61297b589, address=9.69.33.148:80"}
+{"@timestamp":"2021-07-02 11:16:57.560","@message":"I0702 03:16:57.559927       7 polaris.go:51] success to sync get one instance"}
+{"@timestamp":"2021-07-02 11:17:01.696","@message":"I0702 03:17:01.696375       8 server.go:62] Scoping operator to namespace teg-ailab-cvc-chongqing"}
+{"@timestamp":"2021-07-02 11:17:01.696","@message":"I0702 03:17:01.696690       8 server.go:66] [API Version: v1alpha2 Version: v0.1.0-alpha Git SHA: Not provided. Built: Not provided. Go Version: go1.13.6 Go OS/Arch: linux/amd64]"}
+{"@timestamp":"2021-07-02 11:17:01.696","@message":"I0702 03:17:01.696702       8 server.go:69] Server options: &{Kubeconfig: MasterURL: Threadiness:2 PrintVersion:false Namespace:teg-ailab-cvc-chongqing}"}
+{"@timestamp":"2021-07-02 11:17:13.047","@message":"consumer.zip"}
+{"@timestamp":"2021-07-02 11:17:13.106","@message":"[setupvars.sh] OpenVINO environment initialized"}
+{"@timestamp":"2021-07-02 11:17:13.107","@message":"Archive:  consumer.zip"}
+{"@timestamp":"2021-07-02 11:17:13.108","@message":"   creating: latest_yolov5/"}
+{"@timestamp":"2021-07-02 11:17:13.108","@message":"  inflating: latest_yolov5/.dockerignore  "}
+{"@timestamp":"2021-07-02 11:17:13.108","@message":"  inflating: latest_yolov5/requirements.txt  "}
+{"@timestamp":"2021-07-02 11:17:13.108","@message":"  inflating: latest_yolov5/README.md  "}
+{"@timestamp":"2021-07-02 11:17:13.108","@message":"  inflating: latest_yolov5/run_docker.sh  "}
+{"@timestamp":"2021-07-02 11:17:13.108","@message":"  inflating: latest_yolov5/train.py  "}
+{"@timestamp":"2021-07-02 11:17:13.108","@message":"  inflating: latest_yolov5/hubconf.py  "}
+{"@timestamp":"2021-07-02 11:17:13.108","@message":"   creating: latest_yolov5/.github/"}
+{"@timestamp":"2021-07-02 11:17:13.108","@message":"  inflating: latest_yolov5/.github/dependabot.yml  "}
+{"@timestamp":"2021-07-02 11:17:13.108","@message":"  inflating: latest_yolov5/.github/FUNDING.yml  "}
+{"@timestamp":"2021-07-02 11:17:13.108","@message":"   creating: latest_yolov5/.github/ISSUE_TEMPLATE/"}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":"  inflating: latest_yolov5/.github/ISSUE_TEMPLATE/bug-report.md  "}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":"  inflating: latest_yolov5/.github/ISSUE_TEMPLATE/feature-request.md  "}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":"  inflating: latest_yolov5/.github/ISSUE_TEMPLATE/question.md  "}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":"   creating: latest_yolov5/.github/workflows/"}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":"  inflating: latest_yolov5/.github/workflows/greetings.yml  "}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":"  inflating: latest_yolov5/.github/workflows/rebase.yml  "}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":"  inflating: latest_yolov5/.github/workflows/ci-testing.yml  "}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":"  inflating: latest_yolov5/.github/workflows/stale.yml  "}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":"  inflating: latest_yolov5/.github/workflows/codeql-analysis.yml  "}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":"  inflating: latest_yolov5/LICENSE   "}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":"  inflating: latest_yolov5/export.py  "}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":"  inflating: latest_yolov5/CONTRIBUTING.md  "}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":"  inflating: latest_yolov5/.gitattributes  "}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":"   creating: latest_yolov5/.git/"}
+{"@timestamp":"2021-07-02 11:17:13.109","@message":" extracting: latest_yolov5/.git/HEAD  "}
+{"@timestamp":"2021-07-02 11:17:13.110","@message":"  inflating: latest_yolov5/.git/description  "}
+{"@timestamp":"2021-07-02 11:17:13.110","@message":"  inflating: latest_yolov5/.git/index  "}
+{"@timestamp":"2021-07-02 11:17:13.110","@message":"   creating: latest_yolov5/.git/objects/"}
+{"@timestamp":"2021-07-02 11:17:13.110","@message":"   creating: latest_yolov5/.git/objects/info/"}
+{"@timestamp":"2021-07-02 11:17:13.110","@message":"   creating: latest_yolov5/.git/objects/pack/"}
+{"@timestamp":"2021-07-02 11:17:13.111","@message":"  inflating: latest_yolov5/.git/objects/pack/pack-035d161346432abfa933ee24eb397c99777be1b3.idx  "}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"  inflating: latest_yolov5/.git/objects/pack/pack-035d161346432abfa933ee24eb397c99777be1b3.pack  "}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"   creating: latest_yolov5/.git/hooks/"}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"  inflating: latest_yolov5/.git/hooks/pre-commit.sample  "}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"  inflating: latest_yolov5/.git/hooks/commit-msg.sample  "}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"  inflating: latest_yolov5/.git/hooks/pre-rebase.sample  "}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"  inflating: latest_yolov5/.git/hooks/prepare-commit-msg.sample  "}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"  inflating: latest_yolov5/.git/hooks/update.sample  "}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"  inflating: latest_yolov5/.git/hooks/pre-push.sample  "}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"  inflating: latest_yolov5/.git/hooks/pre-applypatch.sample  "}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"  inflating: latest_yolov5/.git/hooks/post-update.sample  "}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"  inflating: latest_yolov5/.git/hooks/applypatch-msg.sample  "}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"   creating: latest_yolov5/.git/logs/"}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"  inflating: latest_yolov5/.git/logs/HEAD  "}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"   creating: latest_yolov5/.git/logs/refs/"}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"   creating: latest_yolov5/.git/logs/refs/heads/"}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"  inflating: latest_yolov5/.git/logs/refs/heads/master  "}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"   creating: latest_yolov5/.git/logs/refs/remotes/"}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"   creating: latest_yolov5/.git/logs/refs/remotes/origin/"}
+{"@timestamp":"2021-07-02 11:17:13.173","@message":"  inflating: latest_yolov5/.git/logs/refs/remotes/origin/HEAD  "}
+{"@timestamp":"2021-07-02 11:17:13.174","@message":"  inflating: latest_yolov5/.git/packed-refs  "}
+{"@timestamp":"2021-07-02 11:17:13.174","@message":"  inflating: latest_yolov5/.git/config  "}
+{"@timestamp":"2021-07-02 11:17:13.174","@message":"   creating: latest_yolov5/.git/info/"}
+{"@timestamp":"2021-07-02 11:17:13.174","@message":"  inflating: latest_yolov5/.git/info/exclude  "}
+{"@timestamp":"2021-07-02 11:17:13.174","@message":"   creating: latest_yolov5/.git/refs/"}
+{"@timestamp":"2021-07-02 11:17:13.174","@message":"   creating: latest_yolov5/.git/refs/tags/"}
+{"@timestamp":"2021-07-02 11:17:13.174","@message":"   creating: latest_yolov5/.git/refs/heads/"}
+{"@timestamp":"2021-07-02 11:17:13.174","@message":" extracting: latest_yolov5/.git/refs/heads/master  "}
+{"@timestamp":"2021-07-02 11:17:13.174","@message":"   creating: latest_yolov5/.git/refs/remotes/"}
+{"@timestamp":"2021-07-02 11:17:13.174","@message":"   creating: latest_yolov5/.git/refs/remotes/origin/"}
+{"@timestamp":"2021-07-02 11:17:13.174","@message":" extracting: latest_yolov5/.git/refs/remotes/origin/HEAD  "}
+{"@timestamp":"2021-07-02 11:17:13.174","@message":"   creating: latest_yolov5/.git/branches/"}
+{"@timestamp":"2021-07-02 11:17:13.177","@message":"  inflating: latest_yolov5/tutorial.ipynb  "}
+{"@timestamp":"2021-07-02 11:17:13.177","@message":"  inflating: latest_yolov5/detect.py  "}
+{"@timestamp":"2021-07-02 11:17:13.177","@message":"   creating: latest_yolov5/models/"}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/common.py  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/yolov5s.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":" extracting: latest_yolov5/models/__init__.py  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/yolov5m.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/yolo.py  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"   creating: latest_yolov5/models/hub/"}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/hub/yolov5-p6.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/hub/yolov5-panet.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/hub/yolov5-p7.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/hub/yolov5-p2.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/hub/yolov5m6.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/hub/anchors.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/hub/yolov5s6.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/hub/yolov5s-transformer.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/hub/yolov5x6.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/hub/yolov3.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/hub/yolov3-tiny.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.178","@message":"  inflating: latest_yolov5/models/hub/yolov3-spp.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.179","@message":"  inflating: latest_yolov5/models/hub/yolov5l6.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.179","@message":"  inflating: latest_yolov5/models/hub/yolov5-fpn.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.179","@message":"  inflating: latest_yolov5/models/yolov5l.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.179","@message":"  inflating: latest_yolov5/models/yolov5x.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.179","@message":"   creating: latest_yolov5/models/__pycache__/"}
+{"@timestamp":"2021-07-02 11:17:13.179","@message":"  inflating: latest_yolov5/models/__pycache__/common.cpython-36.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.179","@message":"  inflating: latest_yolov5/models/__pycache__/yolo.cpython-38.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.179","@message":"  inflating: latest_yolov5/models/__pycache__/experimental.cpython-36.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.179","@message":"  inflating: latest_yolov5/models/__pycache__/common.cpython-38.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.179","@message":"  inflating: latest_yolov5/models/__pycache__/__init__.cpython-36.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/models/__pycache__/experimental.cpython-38.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/models/__pycache__/__init__.cpython-38.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/models/experimental.py  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/demo_config.json  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"   creating: latest_yolov5/data/"}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/data/Argoverse_HD.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/data/SKU-110K.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"   creating: latest_yolov5/data/scripts/"}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/data/scripts/get_coco128.sh  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/data/scripts/get_coco.sh  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/data/scripts/download_weights.sh  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/data/coco128.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"   creating: latest_yolov5/data/hyps/"}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/data/hyps/hyp.scratch.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/data/hyps/hyp.scratch-p6.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/data/hyps/hyp.finetune_objects365.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/data/hyps/hyp.finetune.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/data/VOC.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"  inflating: latest_yolov5/data/VisDrone.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.180","@message":"   creating: latest_yolov5/data/images/"}
+{"@timestamp":"2021-07-02 11:17:13.182","@message":"  inflating: latest_yolov5/data/images/zidane.jpg  "}
+{"@timestamp":"2021-07-02 11:17:13.185","@message":"  inflating: latest_yolov5/data/images/bus.jpg  "}
+{"@timestamp":"2021-07-02 11:17:13.185","@message":"  inflating: latest_yolov5/data/Objects365.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.185","@message":"  inflating: latest_yolov5/data/GlobalWheat2020.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.185","@message":"  inflating: latest_yolov5/data/coco.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.185","@message":"  inflating: latest_yolov5/data/xView.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.185","@message":"  inflating: latest_yolov5/.gitignore  "}
+{"@timestamp":"2021-07-02 11:17:13.185","@message":"  inflating: latest_yolov5/start.sh  "}
+{"@timestamp":"2021-07-02 11:17:13.186","@message":"  inflating: latest_yolov5/test.py   "}
+{"@timestamp":"2021-07-02 11:17:13.186","@message":"  inflating: latest_yolov5/Dockerfile  "}
+{"@timestamp":"2021-07-02 11:17:13.186","@message":"   creating: latest_yolov5/utils/"}
+{"@timestamp":"2021-07-02 11:17:13.186","@message":"  inflating: latest_yolov5/utils/torch_utils.py  "}
+{"@timestamp":"2021-07-02 11:17:13.186","@message":"  inflating: latest_yolov5/utils/google_utils.py  "}
+{"@timestamp":"2021-07-02 11:17:13.186","@message":"   creating: latest_yolov5/utils/flask_rest_api/"}
+{"@timestamp":"2021-07-02 11:17:13.186","@message":"  inflating: latest_yolov5/utils/flask_rest_api/example_request.py  "}
+{"@timestamp":"2021-07-02 11:17:13.186","@message":"  inflating: latest_yolov5/utils/flask_rest_api/README.md  "}
+{"@timestamp":"2021-07-02 11:17:13.186","@message":"  inflating: latest_yolov5/utils/flask_rest_api/restapi.py  "}
+{"@timestamp":"2021-07-02 11:17:13.186","@message":" extracting: latest_yolov5/utils/__init__.py  "}
+{"@timestamp":"2021-07-02 11:17:13.187","@message":"  inflating: latest_yolov5/utils/general.py  "}
+{"@timestamp":"2021-07-02 11:17:13.187","@message":"   creating: latest_yolov5/utils/google_app_engine/"}
+{"@timestamp":"2021-07-02 11:17:13.187","@message":"  inflating: latest_yolov5/utils/google_app_engine/additional_requirements.txt  "}
+{"@timestamp":"2021-07-02 11:17:13.187","@message":"  inflating: latest_yolov5/utils/google_app_engine/app.yaml  "}
+{"@timestamp":"2021-07-02 11:17:13.187","@message":"  inflating: latest_yolov5/utils/google_app_engine/Dockerfile  "}
+{"@timestamp":"2021-07-02 11:17:13.187","@message":"  inflating: latest_yolov5/utils/metrics.py  "}
+{"@timestamp":"2021-07-02 11:17:13.187","@message":"  inflating: latest_yolov5/utils/activations.py  "}
+{"@timestamp":"2021-07-02 11:17:13.187","@message":"   creating: latest_yolov5/utils/wandb_logging/"}
+{"@timestamp":"2021-07-02 11:17:13.187","@message":"  inflating: latest_yolov5/utils/wandb_logging/log_dataset.py  "}
+{"@timestamp":"2021-07-02 11:17:13.187","@message":" extracting: latest_yolov5/utils/wandb_logging/__init__.py  "}
+{"@timestamp":"2021-07-02 11:17:13.187","@message":"  inflating: latest_yolov5/utils/wandb_logging/wandb_utils.py  "}
+{"@timestamp":"2021-07-02 11:17:13.187","@message":"  inflating: latest_yolov5/utils/loss.py  "}
+{"@timestamp":"2021-07-02 11:17:13.187","@message":"   creating: latest_yolov5/utils/__pycache__/"}
+{"@timestamp":"2021-07-02 11:17:13.187","@message":"  inflating: latest_yolov5/utils/__pycache__/autoanchor.cpython-38.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.188","@message":"  inflating: latest_yolov5/utils/__pycache__/metrics.cpython-38.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.188","@message":"  inflating: latest_yolov5/utils/__pycache__/google_utils.cpython-38.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.188","@message":"  inflating: latest_yolov5/utils/__pycache__/datasets.cpython-38.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.188","@message":"  inflating: latest_yolov5/utils/__pycache__/torch_utils.cpython-38.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.188","@message":"  inflating: latest_yolov5/utils/__pycache__/plots.cpython-38.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.189","@message":"  inflating: latest_yolov5/utils/__pycache__/general.cpython-38.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.189","@message":"  inflating: latest_yolov5/utils/__pycache__/__init__.cpython-38.pyc  "}
+{"@timestamp":"2021-07-02 11:17:13.189","@message":"   creating: latest_yolov5/utils/aws/"}
+{"@timestamp":"2021-07-02 11:17:13.189","@message":"  inflating: latest_yolov5/utils/aws/resume.py  "}
+{"@timestamp":"2021-07-02 11:17:13.189","@message":"  inflating: latest_yolov5/utils/aws/mime.sh  "}
+{"@timestamp":"2021-07-02 11:17:13.189","@message":" extracting: latest_yolov5/utils/aws/__init__.py  "}
+{"@timestamp":"2021-07-02 11:17:13.189","@message":"  inflating: latest_yolov5/utils/aws/userdata.sh  "}
+{"@timestamp":"2021-07-02 11:17:13.189","@message":"  inflating: latest_yolov5/utils/autoanchor.py  "}
+{"@timestamp":"2021-07-02 11:17:13.190","@message":"  inflating: latest_yolov5/utils/datasets.py  "}
+{"@timestamp":"2021-07-02 11:17:13.190","@message":"  inflating: latest_yolov5/utils/plots.py  "}
+{"@timestamp":"2021-07-02 11:17:14.276","@message":"/jizhi/jizhi2/worker/trainer"}
+{"@timestamp":"2021-07-02 11:17:14.278","@message":"expect exist"}
+{"@timestamp":"2021-07-02 11:17:14.282","@message":"11.214.14.239"}
+{"@timestamp":"2021-07-02 11:17:14.284","@message":"Connection closed by foreign host."}
+{"@timestamp":"2021-07-02 11:17:14.284","@message":"Escape character is '^]'."}
+{"@timestamp":"2021-07-02 11:17:14.284","@message":"11.214.14.239 sshd is ready"}
+{"@timestamp":"2021-07-02 11:17:14.284","@message":"0"}
+{"@timestamp":"2021-07-02 11:17:14.286","@message":"----------------------------"}
+{"@timestamp":"2021-07-02 11:17:14.286","@message":"vrRkrecY,"}
+{"@timestamp":"2021-07-02 11:17:14.290","@message":"spawn ssh-keygen"}
+{"@timestamp":"2021-07-02 11:17:14.295","@message":"Generating public/private rsa key pair."}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"Enter file in which to save the key (/root/.ssh/id_rsa): "}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"Created directory '/root/.ssh'."}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"Enter passphrase (empty for no passphrase): "}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"Enter same passphrase again: "}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"Your identification has been saved in /root/.ssh/id_rsa."}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"Your public key has been saved in /root/.ssh/id_rsa.pub."}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"The key fingerprint is:"}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"b0:a5:0c:de:8c:0f:bd:70:fa:31:e1:ce:e2:f6:04:9b root@ts-77d6747a9e30482c8a2530c352d58b2b-launcher"}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"The key's randomart image is:"}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"+--[ RSA 2048]----+"}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"|                 |"}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"|                 |"}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"|    . . .        |"}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"|   . B =         |"}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"|    * X S        |"}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"|     @ o         |"}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"|    E B          |"}
+{"@timestamp":"2021-07-02 11:17:14.406","@message":"|    o= o         |"}
+{"@timestamp":"2021-07-02 11:17:14.407","@message":"|   o.o=          |"}
+{"@timestamp":"2021-07-02 11:17:14.407","@message":"+-----------------+"}
+{"@timestamp":"2021-07-02 11:17:14.411","@message":"/jizhi/jizhi2/worker/trainer"}
+{"@timestamp":"2021-07-02 11:17:14.417","@message":"PING ts-77d6747a9e30482c8a2530c352d58b2b-launcher.teg-ailab-cvc-chongqing.svc.cluster.local (11.214.14.239) 56(84) bytes of data."}
+{"@timestamp":"2021-07-02 11:17:14.417","@message":"64 bytes from ts-77d6747a9e30482c8a2530c352d58b2b-launcher (11.214.14.239): icmp_seq=1 ttl=64 time=0.019 ms"}
+{"@timestamp":"2021-07-02 11:17:14.417","@message":"--- ts-77d6747a9e30482c8a2530c352d58b2b-launcher.teg-ailab-cvc-chongqing.svc.cluster.local ping statistics ---"}
+{"@timestamp":"2021-07-02 11:17:14.417","@message":"1 packets transmitted, 1 received, 0% packet loss, time 0ms"}
+{"@timestamp":"2021-07-02 11:17:14.417","@message":"rtt min/avg/max/mdev = 0.019/0.019/0.019/0.000 ms"}
+{"@timestamp":"2021-07-02 11:17:14.418","@message":"ts-77d6747a9e30482c8a2530c352d58b2b-launcher.teg-ailab-cvc-chongqing.svc.cluster.local is ready"}
+{"@timestamp":"2021-07-02 11:17:14.426","@message":"/jizhi/jizhi2/worker/trainer"}
+{"@timestamp":"2021-07-02 11:17:14.426","@message":"/jizhi/jizhi2/worker/trainer"}
+{"@timestamp":"2021-07-02 11:17:14.426","@message":"start user command"}
+{"@timestamp":"2021-07-02 11:17:15.014","@message":"wandb: Appending key for api.wandb.ai to your netrc file: /root/.netrc"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"Retry attempt failed:"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"Traceback (most recent call last):"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/connection.py\", line 169, in _new_conn"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    conn = connection.create_connection("}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/util/connection.py\", line 96, in create_connection"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    raise err"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/util/connection.py\", line 86, in create_connection"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    sock.connect(sa)"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"OSError: [Errno 101] Network is unreachable"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"During handling of the above exception, another exception occurred:"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"Traceback (most recent call last):"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/connectionpool.py\", line 699, in urlopen"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    httplib_response = self._make_request("}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/connectionpool.py\", line 382, in _make_request"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    self._validate_conn(conn)"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/connectionpool.py\", line 1010, in _validate_conn"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    conn.connect()"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/connection.py\", line 353, in connect"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    conn = self._new_conn()"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/connection.py\", line 181, in _new_conn"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    raise NewConnectionError("}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f84a8c952b0>: Failed to establish a new connection: [Errno 101] Network is unreachable"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"During handling of the above exception, another exception occurred:"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"Traceback (most recent call last):"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/requests/adapters.py\", line 439, in send"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    resp = conn.urlopen("}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/connectionpool.py\", line 755, in urlopen"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    retries = retries.increment("}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/util/retry.py\", line 574, in increment"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    raise MaxRetryError(_pool, url, error or ResponseError(cause))"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f84a8c952b0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"During handling of the above exception, another exception occurred:"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"Traceback (most recent call last):"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/wandb/sdk/lib/retry.py\", line 102, in __call__"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    result = self._call_fn(*args, **kwargs)"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py\", line 127, in execute"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    return self.client.execute(*args, **kwargs)"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/gql/client.py\", line 52, in execute"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    result = self._get_result(document, *args, **kwargs)"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/gql/client.py\", line 60, in _get_result"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    return self.transport.execute(document, *args, **kwargs)"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/gql/transport/requests.py\", line 38, in execute"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    request = requests.post(self.url, **post_args)"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/requests/api.py\", line 119, in post"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    return request('post', url, data=data, json=json, **kwargs)"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/requests/api.py\", line 61, in request"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    return session.request(method=method, url=url, **kwargs)"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/requests/sessions.py\", line 542, in request"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    resp = self.send(prep, **send_kwargs)"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/requests/sessions.py\", line 655, in send"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    r = adapter.send(request, **kwargs)"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"  File \"/usr/lib/python3.8/site-packages/requests/adapters.py\", line 516, in send"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"    raise ConnectionError(e, request=request)"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f84a8c952b0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"}
+{"@timestamp":"2021-07-02 11:17:18.465","@message":"wandb: Network error (ConnectionError), entering retry loop."}
+{"@timestamp":"2021-07-02 11:17:22.202","@message":"YOLOv5 🚀 2021-7-2 torch 1.8.0+cu111 CUDA:0 (Tesla V100-SXM2-32GB, 32510.5MB)"}
+{"@timestamp":"2021-07-02 11:17:26.314","@message":"Fusing layers... "}
+{"@timestamp":"2021-07-02 11:17:26.744","@message":"Model Summary: 224 layers, 7266973 parameters, 0 gradients"}
+{"@timestamp":"2021-07-02 11:17:26.908","@message":"\u001b[34m\u001b[1mdetect: \u001b[0mweights=['/apdcephfs/private_luxiferchen/yolov5/yolov5s.pt'], source=/apdcephfs/private_luxiferchen/yolov5/data/images/, imgsz=640, conf_thres=0.25, iou_thres=0.45, max_det=1000, device=, view_img=False, save_txt=False, save_conf=False, save_crop=False, nosave=False, classes=None, agnostic_nms=False, augment=False, update=False, project=/apdcephfs/private_luxiferchen/demo/, name=demo4, exist_ok=False, line_thickness=3, hide_labels=False, hide_conf=False, half=False"}
+{"@timestamp":"2021-07-02 11:17:26.908","@message":"image 1/2 /apdcephfs/private_luxiferchen/yolov5/data/images/bus.jpg: 640x480 4 persons, 1 bus, 1 fire hydrant, Done. (0.018s)"}
+{"@timestamp":"2021-07-02 11:17:26.908","@message":"image 2/2 /apdcephfs/private_luxiferchen/yolov5/data/images/zidane.jpg: 384x640 2 persons, 2 ties, Done. (0.020s)"}
+{"@timestamp":"2021-07-02 11:17:26.908","@message":"Results saved to /apdcephfs/private_luxiferchen/demo/demo416"}
+{"@timestamp":"2021-07-02 11:17:26.908","@message":"Done. (0.136s)"}
+{"@timestamp":"2021-07-02 11:17:27.587","@message":"user exit code: 0"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"CONTRIBUTING.md"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"Dockerfile"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"LICENSE"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"README.md"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"consumer.zip"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"data"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"demo_config.json"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"detect.py"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"export.py"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"hubconf.py"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"job_param.json"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"latest_yolov5"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"models"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"requirements.txt"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"run_docker.sh"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"shared_info"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"start.sh"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"task_out"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"test.py"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"train.py"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"tutorial.ipynb"}
+{"@timestamp":"2021-07-02 11:17:33.590","@message":"utils"}

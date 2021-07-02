@@ -48,8 +48,8 @@ def stat_count(dir):
 def main():
     random.seed(2021)
     new_df=stat_count('F:\All_CSV\csv/')[:1]
-    print(new_df)
-    for cate,file_list in tqdm(zip(new_df['Categories'].values,new_df['Path'].values)):
+
+    for cate,file_list in (zip(new_df['Categories'].values,new_df['Path'].values)):
         image_folder='E:/WWF_Det/WWF_Data/Raw_Data/empty/'+cate+'/images/'
         video_folder='E:/WWF_Det/WWF_Data/Raw_Data/empty/'+cate+'/videos/'
         if not os.path.exists(image_folder):
@@ -59,7 +59,7 @@ def main():
         count_image=0
         count_video=0
         all_source_list=[]
-        for mini_list in tqdm(file_list):
+        for mini_list in (file_list):
             source_list=mini_list[1:-1].split(',')
             for s_item in source_list:
                 source=s_item.strip()[1:-1]
@@ -68,7 +68,7 @@ def main():
                     target=image_folder+'%05d' % (count_image) +os.path.splitext(source)[1]
                     if not os.path.exists(target):
                         source=source.replace('E:','F:\Raw_Dataset',1)
-                        #shutil.copyfile(source,target)
+
                         k=0
                 elif source.lower().strip().endswith('.mov') or source.lower().strip().endswith('.avi') or source.lower().strip().endswith('.mp4'):
                     count_video+=1
@@ -76,21 +76,19 @@ def main():
                     if not os.path.exists(target):
                         source=source.replace('E:','F:\Raw_Dataset',1)
                         all_source_list.append(source)
-                        #shutil.copyfile(source,target)
                         k=0
                 else:
                     print((os.path.splitext(source)[1])[-3:])
-                
-                #shutil.copyfile(source,target)
-                #print(target)
+
         
         random.shuffle(all_source_list)
         num_vid=0
         
-        for source in all_source_list[:3000]:
+        for source in tqdm(all_source_list[:3000]):
             num_vid+=1
             target=video_folder+'%05d' % (num_vid) +os.path.splitext(source)[1]
             shutil.copyfile(source,target)
             #print(source,)
+        print(num_vid)
 if __name__ == "__main__":
     main()
