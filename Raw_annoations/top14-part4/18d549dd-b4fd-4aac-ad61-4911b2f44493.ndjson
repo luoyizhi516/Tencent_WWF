@@ -1,0 +1,133 @@
+{"@timestamp":"2021-07-02 00:09:41.166","@message":"I0701 16:09:41.166053       7 polaris.go:50] sync instance is id=169d7545d95a470e6b50b2b28eff3081b7fb9f78, address=9.68.49.209:80"}
+{"@timestamp":"2021-07-02 00:09:41.166","@message":"I0701 16:09:41.166068       7 polaris.go:51] success to sync get one instance"}
+{"@timestamp":"2021-07-02 00:09:46.808","@message":"I0701 16:09:46.807890       8 server.go:62] Scoping operator to namespace teg-ailab-cvc-chongqing"}
+{"@timestamp":"2021-07-02 00:09:46.808","@message":"I0701 16:09:46.808223       8 server.go:66] [API Version: v1alpha2 Version: v0.1.0-alpha Git SHA: Not provided. Built: Not provided. Go Version: go1.13.6 Go OS/Arch: linux/amd64]"}
+{"@timestamp":"2021-07-02 00:09:46.808","@message":"I0701 16:09:46.808233       8 server.go:69] Server options: &{Kubeconfig: MasterURL: Threadiness:2 PrintVersion:false Namespace:teg-ailab-cvc-chongqing}"}
+{"@timestamp":"2021-07-02 00:11:47.822","@message":"/jizhi/jizhi2/worker/trainer"}
+{"@timestamp":"2021-07-02 00:11:47.824","@message":"expect exist"}
+{"@timestamp":"2021-07-02 00:11:47.830","@message":"9.91.75.43"}
+{"@timestamp":"2021-07-02 00:11:47.831","@message":"Connection closed by foreign host."}
+{"@timestamp":"2021-07-02 00:11:47.831","@message":"Escape character is '^]'."}
+{"@timestamp":"2021-07-02 00:11:47.831","@message":"9.91.75.43 sshd is ready"}
+{"@timestamp":"2021-07-02 00:11:47.831","@message":"0"}
+{"@timestamp":"2021-07-02 00:11:47.833","@message":"----------------------------"}
+{"@timestamp":"2021-07-02 00:11:47.834","@message":"pJlYFEhx,"}
+{"@timestamp":"2021-07-02 00:11:47.838","@message":"spawn ssh-keygen"}
+{"@timestamp":"2021-07-02 00:11:47.844","@message":"Generating public/private rsa key pair."}
+{"@timestamp":"2021-07-02 00:11:48.061","@message":"Enter file in which to save the key (/root/.ssh/id_rsa): "}
+{"@timestamp":"2021-07-02 00:11:48.061","@message":"Created directory '/root/.ssh'."}
+{"@timestamp":"2021-07-02 00:11:48.061","@message":"Enter passphrase (empty for no passphrase): "}
+{"@timestamp":"2021-07-02 00:11:48.061","@message":"Enter same passphrase again: "}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"Your identification has been saved in /root/.ssh/id_rsa."}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"Your public key has been saved in /root/.ssh/id_rsa.pub."}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"The key fingerprint is:"}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"63:69:41:b6:ca:73:47:bd:3d:73:03:2c:7d:19:b9:8e root@ts-d7a120db5de247a4be925be8eb067eab-launcher"}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"The key's randomart image is:"}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"+--[ RSA 2048]----+"}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"|        o      ..|"}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"|       o . .o  .o|"}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"|        o ...+ o.|"}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"|     . . +  .oo. |"}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"|      + S . . *..|"}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"|       = o   E =.|"}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"|                 |"}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"|                 |"}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"|                 |"}
+{"@timestamp":"2021-07-02 00:11:48.062","@message":"+-----------------+"}
+{"@timestamp":"2021-07-02 00:11:48.066","@message":"/jizhi/jizhi2/worker/trainer"}
+{"@timestamp":"2021-07-02 00:11:48.074","@message":"PING ts-d7a120db5de247a4be925be8eb067eab-launcher.teg-ailab-cvc-chongqing.svc.cluster.local (9.91.75.43) 56(84) bytes of data."}
+{"@timestamp":"2021-07-02 00:11:48.074","@message":"64 bytes from ts-d7a120db5de247a4be925be8eb067eab-launcher (9.91.75.43): icmp_seq=1 ttl=64 time=0.014 ms"}
+{"@timestamp":"2021-07-02 00:11:48.074","@message":"--- ts-d7a120db5de247a4be925be8eb067eab-launcher.teg-ailab-cvc-chongqing.svc.cluster.local ping statistics ---"}
+{"@timestamp":"2021-07-02 00:11:48.074","@message":"1 packets transmitted, 1 received, 0% packet loss, time 0ms"}
+{"@timestamp":"2021-07-02 00:11:48.074","@message":"rtt min/avg/max/mdev = 0.014/0.014/0.014/0.000 ms"}
+{"@timestamp":"2021-07-02 00:11:48.074","@message":"ts-d7a120db5de247a4be925be8eb067eab-launcher.teg-ailab-cvc-chongqing.svc.cluster.local is ready"}
+{"@timestamp":"2021-07-02 00:11:48.082","@message":"/jizhi/jizhi2/worker/trainer"}
+{"@timestamp":"2021-07-02 00:11:48.082","@message":"/jizhi/jizhi2/worker/trainer"}
+{"@timestamp":"2021-07-02 00:11:48.082","@message":"start user command"}
+{"@timestamp":"2021-07-02 00:11:51.710","@message":"wandb: Appending key for api.wandb.ai to your netrc file: /root/.netrc"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"Retry attempt failed:"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"Traceback (most recent call last):"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/connection.py\", line 169, in _new_conn"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    conn = connection.create_connection("}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/util/connection.py\", line 96, in create_connection"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    raise err"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/util/connection.py\", line 86, in create_connection"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    sock.connect(sa)"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"OSError: [Errno 101] Network is unreachable"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"During handling of the above exception, another exception occurred:"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"Traceback (most recent call last):"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/connectionpool.py\", line 699, in urlopen"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    httplib_response = self._make_request("}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/connectionpool.py\", line 382, in _make_request"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    self._validate_conn(conn)"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/connectionpool.py\", line 1010, in _validate_conn"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    conn.connect()"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/connection.py\", line 353, in connect"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    conn = self._new_conn()"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/connection.py\", line 181, in _new_conn"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    raise NewConnectionError("}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f7d6b2c0280>: Failed to establish a new connection: [Errno 101] Network is unreachable"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"During handling of the above exception, another exception occurred:"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"Traceback (most recent call last):"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/requests/adapters.py\", line 439, in send"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    resp = conn.urlopen("}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/connectionpool.py\", line 755, in urlopen"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    retries = retries.increment("}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/urllib3/util/retry.py\", line 574, in increment"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    raise MaxRetryError(_pool, url, error or ResponseError(cause))"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7d6b2c0280>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"During handling of the above exception, another exception occurred:"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"Traceback (most recent call last):"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/wandb/sdk/lib/retry.py\", line 102, in __call__"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    result = self._call_fn(*args, **kwargs)"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py\", line 127, in execute"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    return self.client.execute(*args, **kwargs)"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/gql/client.py\", line 52, in execute"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    result = self._get_result(document, *args, **kwargs)"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/gql/client.py\", line 60, in _get_result"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    return self.transport.execute(document, *args, **kwargs)"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/gql/transport/requests.py\", line 38, in execute"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    request = requests.post(self.url, **post_args)"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/requests/api.py\", line 119, in post"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    return request('post', url, data=data, json=json, **kwargs)"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/requests/api.py\", line 61, in request"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    return session.request(method=method, url=url, **kwargs)"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/requests/sessions.py\", line 542, in request"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    resp = self.send(prep, **send_kwargs)"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/requests/sessions.py\", line 655, in send"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    r = adapter.send(request, **kwargs)"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"  File \"/usr/lib/python3.8/site-packages/requests/adapters.py\", line 516, in send"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"    raise ConnectionError(e, request=request)"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7d6b2c0280>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"}
+{"@timestamp":"2021-07-02 00:11:55.202","@message":"wandb: Network error (ConnectionError), entering retry loop."}
+{"@timestamp":"2021-07-02 00:11:58.958","@message":"YOLOv5 🚀 2021-7-2 torch 1.8.0+cu111 CUDA:0 (Tesla V100-SXM2-32GB, 32510.5MB)"}
+{"@timestamp":"2021-07-02 00:12:02.857","@message":"Fusing layers... "}
+{"@timestamp":"2021-07-02 00:12:03.281","@message":"Model Summary: 224 layers, 7266973 parameters, 0 gradients"}
+{"@timestamp":"2021-07-02 00:12:03.438","@message":"\u001b[34m\u001b[1mdetect: \u001b[0mweights=['/apdcephfs/private_luxiferchen/yolov5/yolov5s.pt'], source=/apdcephfs/private_luxiferchen/yolov5/data/images/, imgsz=640, conf_thres=0.25, iou_thres=0.45, max_det=1000, device=, view_img=False, save_txt=False, save_conf=False, save_crop=False, nosave=False, classes=None, agnostic_nms=False, augment=False, update=False, project=/apdcephfs/private_luxiferchen/demo/, name=demo4, exist_ok=False, line_thickness=3, hide_labels=False, hide_conf=False, half=False"}
+{"@timestamp":"2021-07-02 00:12:03.438","@message":"image 1/2 /apdcephfs/private_luxiferchen/yolov5/data/images/bus.jpg: 640x480 4 persons, 1 bus, 1 fire hydrant, Done. (0.019s)"}
+{"@timestamp":"2021-07-02 00:12:03.438","@message":"image 2/2 /apdcephfs/private_luxiferchen/yolov5/data/images/zidane.jpg: 384x640 2 persons, 2 ties, Done. (0.018s)"}
+{"@timestamp":"2021-07-02 00:12:03.438","@message":"Results saved to /apdcephfs/private_luxiferchen/demo/demo414"}
+{"@timestamp":"2021-07-02 00:12:03.438","@message":"Done. (0.132s)"}
+{"@timestamp":"2021-07-02 00:12:04.062","@message":"user exit code: 0"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"CONTRIBUTING.md"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"Dockerfile"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"LICENSE"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"README.md"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"consumer.zip"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"data"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"demo_config.json"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"detect.py"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"export.py"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"hubconf.py"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"job_param.json"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"latest_yolov5"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"models"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"requirements.txt"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"run_docker.sh"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"shared_info"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"start.sh"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"task_out"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"test.py"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"train.py"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"tutorial.ipynb"}
+{"@timestamp":"2021-07-02 00:12:10.068","@message":"utils"}
