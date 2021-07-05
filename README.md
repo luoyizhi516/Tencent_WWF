@@ -21,6 +21,6 @@ This folder contains the txt files storing the samples that are below the mark w
 ### Final_data_building
 This folder contains the code for the building of the final data for training. Generally two diffenrent kinds of data splitting rule were made.
 ### Final_data_stat 
-This folder store the frame and video-level information for splitted samples inluding modality, numbers, path, categories, etc.
+This folder stores the frame and video-level information for splitted samples inluding modality, numbers, path, categories, etc.
 
 
