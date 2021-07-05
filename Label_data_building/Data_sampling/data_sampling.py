@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 
 
 def main():
-    sample_range=[60,90]
+    sample_range=[90,120]
     #This is the base for all raw dataset that is subjected to be labeled
     allset_base='D:/WWF_Det\WWF_Data\Raw_Data/top14-all/'
     #This is the base for the subset that is already label and will be droped later
@@ -38,7 +38,7 @@ def main():
         sample_video=droped_video[sample_range_min:sample_range_max]
 
         #print(sample_video)
-        newset_base='D:/WWF_Det/WWF_Data/Raw_Data/top14-p5/'
+        newset_base='D:/WWF_Det/WWF_Data/Raw_Data/top14-p6/'
         newset_cate_video_dir=newset_base+cate+'/videos/'
         if not os.path.exists(newset_cate_video_dir): os.makedirs(newset_cate_video_dir)
         for vid in sample_video:

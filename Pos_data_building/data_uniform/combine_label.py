@@ -28,8 +28,8 @@ def combine_transform(base,save_dir):
 
 def main():
     
-    annotation_base=r'D:\WWF_Det\WWF_Det\Raw_annoations\top14-part4/'
-    save_dir=r'D:\WWF_Det\WWF_Det\Raw_annoations\top14-part4.csv'
+    annotation_base=r'D:\WWF_Det\WWF_Det\Raw_annoations\top14-part5/'
+    save_dir=r'D:\WWF_Det\WWF_Det\Raw_annoations\top14-part5.csv'
     combine_transform(annotation_base,save_dir)
 if __name__ == "__main__":
     
