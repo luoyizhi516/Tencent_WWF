@@ -25,7 +25,7 @@ def extract_frames(src_path,target_path):
         dest = cur_new_path +'-%04d.jpg'
         #print(dest)
         os.system("ffmpeg" + " -i" +' ' +filename +" -r" +" 1" +' '+ dest)
-
+        #os.system("ffmpeg" + " -i" +' ' +filename +" -r" +" 0.5" +' -q:v 2 -f image2'+' '+ dest)
 def main():
     base,start,end=opt.base,opt.start,opt.end
     for i in os.listdir(base):
