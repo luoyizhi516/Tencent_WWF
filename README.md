@@ -2,7 +2,7 @@
 
 
 ## Introduction
-This is the data preprocessing repository for for animal surveillance project that Tencent cooperates with [World Wildlife Foundation.](https://www.worldwildlife.org/). This work is done by [Tencent AI Lab.](https://ai.tencent.com/ailab/en/index)
+This is the data preprocessing repository for for animal surveillance project that Tencent cooperates with [World Wildlife Foundation.](https://www.worldwildlife.org/) This work is done by [Tencent AI Lab.](https://ai.tencent.com/ailab/en/index)
 
 ## General naming rules for data
 <br />
