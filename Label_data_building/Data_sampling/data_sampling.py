@@ -40,12 +40,15 @@ def main():
         #print(sample_video)
         newset_base='D:/WWF_Det/WWF_Data/Raw_Data/top14-p6/'
         newset_cate_video_dir=newset_base+cate+'/videos/'
-        if not os.path.exists(newset_cate_video_dir): os.makedirs(newset_cate_video_dir)
+
         if len(sample_video):
+            if not os.path.exists(newset_cate_video_dir): os.makedirs(newset_cate_video_dir)
             for vid in sample_video:
 
                 shutil.copyfile(allset_cate_video_dir+vid,newset_cate_video_dir+vid)
         print("Sampling is done!")
+
+
 if __name__ == "__main__":
     
     main()
