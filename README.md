@@ -1,6 +1,7 @@
 # Tencent_WWF
 ## Introduction
 This is the data preprocessing repository for for animal surveillance project that Tencent cooperates with World Wildlife Foundation.
+
 A general naming rules:
 -Raw data: Raw data represents the unlabeled data that are divided to serveral batches and multiple catogiries of animal for each batch.
 -Pos data: Pos data represents the labled data that is returned from the annotation staff. Both the valuable data and disqualified data are stored here. 
