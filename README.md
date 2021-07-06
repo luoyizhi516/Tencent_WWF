@@ -5,13 +5,11 @@
 This is the data preprocessing repository for for animal surveillance project that Tencent cooperates with [World Wildlife Foundation](https://www.worldwildlife.org/). This work is done by [Tencent AI Lab](https://ai.tencent.com/ailab/en/index).
 
 ## General naming rules for data
-<br />
 
 - 📊 Ori data: represents the original data obtained from WWF with original folder structure.
 - 🛠 Raw data: represents the unlabeled data that are divided to serveral batches and multiple catogiries of animal for each batch.
 - ✨ Pos data: represents the labled data that is returned from the annotation staff. Both the valuable data and disqualified data are stored here.
 - 📝 Final data: represents the final labled data that are splitted in various critiria.
-<br />
 
 ## Folder Functions
 ### Ori data cleaning
