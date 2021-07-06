@@ -29,7 +29,9 @@ def main():
         valuableset_train='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/conservation/train/'
         valuableset_val='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/conservation/val/'
         train_set=os.path.join(final_data_base,'train')
-        test_set=os.path.join(final_data_base,'val')
+        val_set=os.path.join(final_data_base,'val')
+        os.system("cp -R "+valuableset_train+' '+train_set)
+        os.system("cp -R "+valuableset_val+' '+val_set)
 if __name__ == "__main__":
     
     main()
