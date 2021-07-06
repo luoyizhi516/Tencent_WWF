@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 
 
 def main():
-    image_base,label_base='D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1/valuableset/images/','D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1/valuableset/labels/'
+    image_base,label_base='D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1/valuableset-v/images/','D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1/valuableset-v/labels/'
     x,y=os.listdir(image_base),os.listdir(label_base)
     #open('D:\WWF\data-check-list\check-list-part2\check-all-part2.txt','r')
     drop_list_x=np.unique(np.array([line2.replace('\n','',1)+'.jpg' for line2 in open(r'D:\WWF_Det\WWF_Det\Drop_txt\sup9-p1-all.txt')])).tolist()
@@ -28,8 +28,8 @@ def main():
     droped_y=[i for i in y if i not in drop_list_y]
     print("Actual droped number during data spliting! "+str(len(x)-len(droped_x)))
     x_train,x_tar,y_train,y_tar=train_test_split(droped_x,droped_y,test_size=0.2,random_state=2021)
-    train_folder_img,train_folder_txt='D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1/conservation/train/images/','D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1/conservation/train/labels/'
-    test_folder_img,test_folder_txt='D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1/conservation/val/images/','D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1/conservation/val/labels/'
+    train_folder_img,train_folder_txt='D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1/conservation-v/train/images/','D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1/conservation-v/train/labels/'
+    test_folder_img,test_folder_txt='D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1/conservation-v/val/images/','D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1/conservation-v/val/labels/'
     if not os.path.exists(train_folder_img): os.makedirs(train_folder_img)
     if not os.path.exists(train_folder_txt): os.makedirs(train_folder_txt)
     if not os.path.exists(test_folder_img): os.makedirs(test_folder_img)
