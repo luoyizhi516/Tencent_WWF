@@ -25,7 +25,11 @@ def main():
         valuableset='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/valuableset/'
         train_set=os.path.join(final_data_base,'train')
         os.system("cp -R "+valuableset+' '+train_set)
-        
+    for i in suplement_datasets:
+        valuableset_train='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/conservation/train/'
+        valuableset_val='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/conservation/val/'
+        train_set=os.path.join(final_data_base,'train')
+        test_set=os.path.join(final_data_base,'val')
 if __name__ == "__main__":
     
     main()
