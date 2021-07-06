@@ -30,6 +30,7 @@ This folder contains the code for the building of the labled data including chec
 This folder stores the statistic analysis result obtained from Pos data building module.
 ### Raw annotations
 This folder stores the raw annotations and the concatinated annotations for each batch of labeled data.
-### 
+### Raw data cleaning
+This folder contains the data cleaning code of the 
 
 
