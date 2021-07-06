@@ -15,8 +15,7 @@ This is the data preprocessing repository for for animal surveillance project th
 <br />
 
 
-## Pipeline for data preprossing
-
+## Folder Functions
 ### Ori data cleaning
 This folder contains the data cleaning code of the original data; one portion of code make statistic analysis on data ditribution and another contruct the raw dataset.
 
