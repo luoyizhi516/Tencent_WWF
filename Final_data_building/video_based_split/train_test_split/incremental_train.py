@@ -20,7 +20,7 @@ def main():
     suplement_datasets=['sup9-part1']
     splited_data_base='D:/WWF_Det/WWF_Data/Final_Data/top14-p123/'
     final_data_base='D:/WWF_Det/WWF_Data/Final_Data/top23-p1234-p1/'
-    os.system("cp -r "+splited_data_base+' '+final_data_base)
+    os.system("cp -R "+splited_data_base+' '+final_data_base)
     for i in increment_datasets:
         valuableset='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/valuableset/'
         train_set=os.path.join(final_data_base,'train')
