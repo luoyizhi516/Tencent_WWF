@@ -22,8 +22,10 @@ def main():
         timu_data=json.loads(row['题目数据'])
         pic_id=row['题目ID']
         file_path=data_set+timu_data['Path']
-        image_folder='D:/WWF_Det/WWF_Data/Pos_Data/top14-part3/allset/images/'
-        text_folder='D:/WWF_Det/WWF_Data/Pos_Data/top14-part3/allset/labels/'
+        file_path=file_path.replace('frames','frames-v',1)
+        #file_path=file_path.replace('D:/top14-dataset-part3','D:/WWF_Det/WWF_Data/Raw_Data/top14-p1-p2')
+        image_folder='D:/WWF_Det/WWF_Data/Pos_Data/top14-part3/allset-v/images/'
+        text_folder='D:/WWF_Det/WWF_Data/Pos_Data/top14-part3/allset-v/labels/'
         if not os.path.exists(image_folder): 
             os.makedirs(image_folder, exist_ok = True)
         if not os.path.exists(text_folder): 

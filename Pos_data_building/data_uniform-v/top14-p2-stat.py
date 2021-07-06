@@ -18,11 +18,11 @@ def main():
     
     dataset_name='top14-part2'
     check_txt=r"D:/WWF_Det\WWF_Det\Drop_txt/top14-p2-all.txt"
-    stat_csv='D:/WWF_Det/WWF_Det/Dataset_stat/top14-part2-dataset-stat.csv'
+    stat_csv='D:/WWF_Det/WWF_Det/Pos_data_stat/top14-part2-dataset-stat-v.csv'
 
     #"D:\WWF\data-check-list\check_list\check-all.txt"
 
-    image_base,label_base='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/allset/images/','D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/allset/labels/'
+    image_base,label_base='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/allset-v/images/','D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/allset-v/labels/'
     
     x,y=os.listdir(image_base),os.listdir(label_base)
     img_id=[i.replace('.jpg','',1)for i in x]
@@ -63,10 +63,10 @@ def main():
     }
     df_store=pd.DataFrame(data)
     df_store.to_csv(stat_csv)
-    x_dir='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/valuableset/images/'
-    y_dir='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/valuableset/labels/'
-    x_err='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/errset/'
-    x_empty='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/emptyset/'
+    x_dir='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/valuableset-v/images/'
+    y_dir='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/valuableset-v/labels/'
+    x_err='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/errset-v/'
+    x_empty='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/emptyset-v/'
     if not os.path.exists(x_dir): os.makedirs(x_dir)
     if not os.path.exists(y_dir): os.makedirs(y_dir)
     if not os.path.exists(x_err): os.makedirs(x_err)
