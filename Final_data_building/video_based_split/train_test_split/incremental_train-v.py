@@ -18,16 +18,16 @@ from sklearn.model_selection import train_test_split
 def main():
     increment_datasets=['top14-part4']
     suplement_datasets=['sup9-part1']
-    splited_data_base='D:/WWF_Det/WWF_Data/Final_Data/top14-p123/'
-    final_data_base='D:/WWF_Det/WWF_Data/Final_Data/top23-p1234-p1/'
+    splited_data_base='D:/WWF_Det/WWF_Data/Final_Data/top14-p123-v/'
+    final_data_base='D:/WWF_Det/WWF_Data/Final_Data/top23-p1234-p1-v/'
     os.system("cp -R "+splited_data_base+' '+final_data_base)
     for i in increment_datasets:
-        valuableset='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/valuableset/'
+        valuableset='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/valuableset-v/'
         train_set=os.path.join(final_data_base,'train')
         os.system("cp -r "+valuableset+'* '+train_set)
     for i in suplement_datasets:
-        valuableset_train='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/conservation/train/'
-        valuableset_val='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/conservation/val/'
+        valuableset_train='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/conservation-v/train/'
+        valuableset_val='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/conservation-v/val/'
         train_set=os.path.join(final_data_base,'')
         val_set=os.path.join(final_data_base,'')
         os.system("cp -r "+valuableset_train+' '+train_set)
