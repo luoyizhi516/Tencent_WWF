@@ -16,9 +16,9 @@ from sklearn.model_selection import train_test_split
 
 def main():
     
-    dataset_name='top14-part3/'
-    check_txt=r"D:/WWF_Det\WWF_Det\Drop_txt/top14-p3-all.txt"
-    stat_csv='D:/WWF_Det/WWF_Det/Pos_data_stat/top14-part3-dataset-stat.csv'
+    dataset_name='top14-part4'
+    check_txt=r"D:/WWF_Det\WWF_Det\Drop_txt/top14-p4-all.txt"
+    stat_csv='D:/WWF_Det/WWF_Det/Pos_data_stat/top14-part4-dataset-stat.csv'
 
     #"D:\WWF\data-check-list\check_list\check-all.txt"
 
@@ -29,7 +29,9 @@ def main():
     txt_id=[i.replace('.txt','',1)for i in y]
 
     err_id=np.unique(np.array([line.replace('\n','',1) for line in open(check_txt)])).tolist()
-
+    for i in err_id:
+         check_path=image_base+i+".jpg"
+         assert os.path.exists(check_path),check_path+'not exists'
     droped_id=[i for i in txt_id if i in err_id]
     valuable_id=[i for i in txt_id if i not in err_id]
     kongpai_id=[i for i in img_id if i not in txt_id]
