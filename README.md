@@ -26,7 +26,7 @@ This folder contains the code for the constructing the label task data sampled f
 ### Raw annotations
 This folder stores the raw annotations and the concatinated annotations for each batch of labeled data.
 
-#### Pos data building
+### Pos data building
 This folder contains the code for the building of the labled data including checking the annotation quality and make statistic analysis on data.
 
 ### Drop txt
