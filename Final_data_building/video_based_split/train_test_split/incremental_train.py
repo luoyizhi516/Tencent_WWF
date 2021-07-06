@@ -20,18 +20,18 @@ def main():
     suplement_datasets=['sup9-part1']
     splited_data_base='D:/WWF_Det/WWF_Data/Final_Data/top14-p123/'
     final_data_base='D:/WWF_Det/WWF_Data/Final_Data/top23-p1234-p1/'
-    os.system("cp -R "+splited_data_base+' '+final_data_base)
+    os.system("cp -r "+splited_data_base+' '+final_data_base)
     for i in increment_datasets:
         valuableset='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/valuableset/'
         train_set=os.path.join(final_data_base,'train')
-        os.system("cp -R "+valuableset+' '+train_set)
+        os.system("cp -r "+valuableset+' '+train_set)
     for i in suplement_datasets:
         valuableset_train='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/conservation/train/'
         valuableset_val='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/conservation/val/'
-        train_set=os.path.join(final_data_base,'train')
-        val_set=os.path.join(final_data_base,'val')
-        os.system("cp -R "+valuableset_train+' '+train_set)
-        os.system("cp -R "+valuableset_val+' '+val_set)
+        train_set=os.path.join(final_data_base,'')
+        val_set=os.path.join(final_data_base,'')
+        os.system("cp -r "+valuableset_train+' '+train_set)
+        os.system("cp -r "+valuableset_val+' '+val_set)
 if __name__ == "__main__":
     
     main()
