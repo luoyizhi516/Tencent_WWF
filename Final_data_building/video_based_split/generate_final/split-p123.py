@@ -20,7 +20,7 @@ def main():
     raw_data_base='D:/WWF_Det/WWF_Data/Raw_Data/top14-p1-p2-p3-merged/'
     annotation_base='D:/WWF_Det/WWF_Det/Raw_annoations/'
     vid_split_path='D:/WWF_Det/WWF_Det/Final_data_stat/top14-p123/video_split.csv'
-    split_file='D:/WWF_Det/WWF_Det/Final_data_stat/top14-p123/img_split.csv'
+    split_file='D:/WWF_Det/WWF_Det/Final_data_stat/top14-p123/img_split2.csv'
     Final_data_base='D:/WWF_Det/WWF_Data/Final_Data/top14-p123/'
     train_img_dir,train_txt_dir=Final_data_base+'/train/images/',Final_data_base+'/train/labels/'
     test_img_dir,test_txt_dir=Final_data_base+'/val/images/',Final_data_base+'/val/labels/'
