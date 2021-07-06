@@ -24,7 +24,7 @@ def main():
     for i in increment_datasets:
         valuableset='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/valuableset/'
         train_set=os.path.join(final_data_base,'train')
-        os.system("cp -r "+valuableset+' '+train_set)
+        os.system("cp -r "+valuableset+'* '+train_set)
     for i in suplement_datasets:
         valuableset_train='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/conservation/train/'
         valuableset_val='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/conservation/val/'
