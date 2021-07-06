@@ -11,8 +11,8 @@ This is the data preprocessing repository for for animal surveillance project th
 - 🛠 Raw data: represents the unlabeled data that are divided to serveral batches and multiple catogiries of animal for each batch.
 - ✨ Pos data: represents the labled data that is returned from the annotation staff. Both the valuable data and disqualified data are stored here.
 - 📝 Final data: represents the final labled data that are splitted in various critiria.
-
 <br />
+
 ## Folder Functions
 ### Ori data cleaning
 This folder contains the data cleaning code of the original data; one portion of code make statistic analysis on data ditribution and another contruct the raw dataset.
