@@ -3,8 +3,8 @@ import os
 import numpy as np
 import cv2,argparse
 def main():
-    all_file='D:/WWF_Det/WWF_Det/Drop_txt/top14-p3-all.txt'
-    file_base='D:/WWF_Det/WWF_Det/Drop_txt/top14-part3/'
+    all_file='D:/WWF_Det/WWF_Det/Drop_txt/top14-p4-all.txt'
+    file_base='D:/WWF_Det/WWF_Det/Drop_txt/top14-part4/'
     file_list=os.listdir(file_base)
     #print(file_list)
     #file = open(all_file,'r')
