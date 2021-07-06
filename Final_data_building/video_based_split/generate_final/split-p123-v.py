@@ -20,8 +20,8 @@ def main():
     raw_data_base='D:/WWF_Det/WWF_Data/Raw_Data/top14-p1-p2-p3-merged/'
     annotation_base='D:/WWF_Det/WWF_Det/Raw_annoations/'
     vid_split_path='D:/WWF_Det/WWF_Det/Final_data_stat/top14-p123/video_split.csv'
-    split_file='D:/WWF_Det/WWF_Det/Final_data_stat/top14-p123/img_split2.csv'
-    Final_data_base='D:/WWF_Det/WWF_Data/Final_Data/top14-p123/'
+    split_file='D:/WWF_Det/WWF_Det/Final_data_stat/top14-p123/img_split-v.csv'
+    Final_data_base='D:/WWF_Det/WWF_Data/Final_Data/top14-p123-v/'
     train_img_dir,train_txt_dir=Final_data_base+'/train/images/',Final_data_base+'/train/labels/'
     test_img_dir,test_txt_dir=Final_data_base+'/val/images/',Final_data_base+'/val/labels/'
     if not os.path.exists(train_img_dir):os.makedirs(train_img_dir)
@@ -38,8 +38,8 @@ def main():
     combine_data_list=['top14-part1','top14-part2','top14-part3']
     df_vid=pd.read_csv(vid_split_path)
     for dataset in combine_data_list:
-        valuableset_dir=pos_data_base+dataset+'/valuableset/images/'
-        valuableset_txt_dir=pos_data_base+dataset+'/valuableset/labels/'
+        valuableset_dir=pos_data_base+dataset+'/valuableset-v/images/'
+        valuableset_txt_dir=pos_data_base+dataset+'/valuableset-v/labels/'
         annotation_dir=annotation_base+dataset+'.csv'
         df=pd.read_csv(annotation_dir)
         pic_id_list=[i.replace('.jpg','',1) for i in os.listdir(valuableset_dir)]
