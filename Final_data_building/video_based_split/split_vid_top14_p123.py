@@ -39,14 +39,14 @@ def main():
             test_index_all=list(infra_test_index+rgb_test_index)
             
             train_index_all=[i for i in infra_index+rgb_index if i not in test_index_all]
-            
+            #print(len(test_index_all))
             for ID in test_index_all:
             
                 df.loc[ID,'label']='test'
                 ori_dir=df.loc[ID,'video_path']
                 cate=df.loc[ID,'cate']
                 target_base=os.path.join('D:/WWF_Det/WWF_Data/Final_Data/valset-vid-v1/',cate)
-                target_dir=os.path.join(target_base,os.path.splitext(ori_dir)[1])
+                target_dir=os.path.join(target_base,ori_dir.split('/')[-1])
                 if not os.path.exists(target_base): os.makedirs(target_base)
                 shutil.copyfile(ori_dir,target_dir)
             for ID in train_index_all:
