@@ -15,6 +15,7 @@ from sklearn.model_selection import train_test_split
 
 
 def main():
+        #test
         data_stat_path='D:\WWF_Det\WWF_Det\Raw_data_stat/top14-p1-p2-p3-merged/top14-p123-combine.csv'
         critiria_path='D:/WWF_Det/WWF_Det/Raw_data_stat/top14-all/split_critiria.csv'
         save_base='D:/WWF_Det/WWF_Det/Final_data_stat/top14-p123/'
