@@ -63,8 +63,9 @@ def main():
 
                             img=cv2ImgAddText(img, class_name , int(topleft[0]),center_y,(0,255,255),20)
                         #img=cv2ImgAddText(img,str(pic_id),10,10,(0,0,0),30)
-        if not os.path.exists(visual_folder+image_name):
-            cv2.imwrite(visual_folder+image_name,img)
+        #ONLY plot the image if it is labeled.
+            if not os.path.exists(visual_folder+image_name):
+                cv2.imwrite(visual_folder+image_name,img)
 
     #return df_store
 if __name__ == "__main__":
