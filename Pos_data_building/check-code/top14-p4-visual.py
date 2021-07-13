@@ -22,7 +22,7 @@ def cv2ImgAddText(img, text, left, top, textColor=(0, 255, 0), textSize=20):
 
 
 def main():
-    csv_file='D:/WWF_Det/WWF_Det/Raw_annoations/top14-part5.csv'
+    csv_file='D:/WWF_Det/WWF_Det/Raw_annoations/top14-part6.csv'
     df=pd.read_csv(csv_file)
     data_set='D:/WWF_Det/WWF_Data/Raw_Data/'
     box_num=0
@@ -32,11 +32,11 @@ def main():
         pic_id=row['题目ID']
         file_path=data_set+timu_data['Path']
         
-        visual_folder='D:/WWF_Det/WWF_Data/Pos_Data/top14-part5/allset/visualizations/'
+        visual_folder='D:/WWF_Det/WWF_Data/Pos_Data/top14-part6/allset/visualizations/'
 
         if not os.path.exists(visual_folder): 
             os.makedirs(visual_folder, exist_ok = True)
-        file_path=file_path.replace('/top14-part5-raw/','/top14-p5/',1)
+        file_path=file_path.replace('/top14-part6-raw/','/top14-p6/',1)
         assert os.path.exists(file_path),file_path
         
         cate=timu_data['Path'].split('/')[1]
