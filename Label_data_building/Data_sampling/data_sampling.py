@@ -23,6 +23,7 @@ def main():
     #subset_cate_list=os.listdir(subset_base)
 
     for cate in tqdm(allset_cate_list):
+    
         print('Processing '+cate)
         allset_cate_video_dir=allset_base+cate+'/videos/'
         subset_cate_video_dir=subset_base+cate+'/videos/'
