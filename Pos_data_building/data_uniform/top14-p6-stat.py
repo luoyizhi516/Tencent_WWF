@@ -16,9 +16,9 @@ from sklearn.model_selection import train_test_split
 
 def main():
     
-    dataset_name='top14-part5'
-    check_txt=r"D:/WWF_Det\WWF_Det\Drop_txt/top14-p5-all.txt"
-    stat_csv='D:/WWF_Det/WWF_Det/Pos_data_stat/top14-part5-dataset-stat.csv'
+    dataset_name='top14-part6'
+    check_txt=r"D:/WWF_Det\WWF_Det\Drop_txt/top14-p6-all.txt"
+    stat_csv='D:/WWF_Det/WWF_Det/Pos_data_stat/top14-part6-dataset-stat.csv'
 
     #"D:\WWF\data-check-list\check_list\check-all.txt"
 
