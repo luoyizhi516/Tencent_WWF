@@ -6,10 +6,10 @@ def main():
     base,txt_path,start,end=opt.img_dir,opt.text_dir,opt.start,opt.end
     img_list=os.listdir(base)
     
-    txt_path=r'D:\WWF_Det\WWF_Det\Drop_txt\top14-part3/check7600-7700.txt'
+    txt_path=r'D:\WWF_Det\WWF_Det\Drop_txt\top14-part5/check2100-2200.txt'
     with open(txt_path, 'w') as f:
 
-        for i in img_list[7600:7700]:
+        for i in img_list[2100:2200]:
             img_dir=base+i
             print(img_dir)
     
@@ -32,7 +32,7 @@ def main():
                 break
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--img_dir', type=str, default=r'D:\WWF_Det\WWF_Data\Pos_Data\top14-part3\allset\visualizations/', help='dataset_store_dir')
+    parser.add_argument('--img_dir', type=str, default=r'D:\WWF_Det\WWF_Data\Pos_Data\top14-part5\allset\visualizations/', help='dataset_store_dir')
     parser.add_argument('--text_dir', type=str, default='check.txt', help='result')
     parser.add_argument('--start', type=int, default='0', help='start_img')
     parser.add_argument('--end', type=int, default='3210', help='start_img')
