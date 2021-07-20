@@ -6,17 +6,17 @@ def main():
     base,txt_path,start,end=opt.img_dir,opt.text_dir,opt.start,opt.end
     img_list=os.listdir(base)
     
-    txt_path=r'D:\WWF_Det\WWF_Det\Drop_txt\top14-part5/check2100-2200.txt'
+    txt_path=r'D:\WWF_Det\WWF_Det\Drop_txt\top14-part5/check2200-2300.txt'
     with open(txt_path, 'w') as f:
 
-        for i in img_list[2100:2200]:
+        for i in img_list[2200:2300]:
             img_dir=base+i
             print(img_dir)
     
             img=cv2.imread(img_dir)
             win_name=img_dir
-            # cv2.namedWindow(win_name,0)
-            # cv2.resizeWindow(win_name, 1024, 720)
+            cv2.namedWindow(win_name,0)
+            cv2.resizeWindow(win_name, 1024, 720)
             cv2.imshow(win_name,img)
             k=cv2.waitKey(0)
             if k & 0xFF == ord('y'):
