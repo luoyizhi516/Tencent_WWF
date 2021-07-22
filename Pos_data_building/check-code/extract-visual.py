@@ -36,6 +36,8 @@ def extract_data(dataset_name):
             os.makedirs(image_folder, exist_ok = True)
         if not os.path.exists(text_folder): 
             os.makedirs(text_folder, exist_ok = True)
+        file_path=file_path.replace('/top14-part4-raw/','/top14-p4/',1)
+
         assert os.path.exists(file_path),file_path
         
         cate=timu_data['Path'].split('/')[1]
@@ -81,7 +83,7 @@ def visual(dataset_name):
 
             if not os.path.exists(visual_folder): 
                 os.makedirs(visual_folder, exist_ok = True)
-
+            file_path=file_path.replace('/top14-part4-raw/','/top14-p4/',1)
             assert os.path.exists(file_path),file_path
             
             cate=timu_data['Path'].split('/')[1]
