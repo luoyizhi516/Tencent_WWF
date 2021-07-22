@@ -19,6 +19,7 @@ def path_replacement(file_path,dataset_name):
     else:
         file_path=file_path.replace('-part','-p',1)
         file_path=file_path.replace('-raw/','/',1)
+        file_path=file_path.replace('primary_supplement','sup9-p1')
     return file_path
 
 def cv2ImgAddText(img, text, left, top, textColor=(0, 255, 0), textSize=20):
@@ -182,7 +183,7 @@ def unknown_check(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
                                     
 
 if __name__ == "__main__":
-    dataset='top14-part3'
+    dataset='sup9-part1'
     extract_data(dataset)
     visual(dataset)
     unknown_check(dataset)
