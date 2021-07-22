@@ -14,7 +14,7 @@ from sklearn.model_selection import train_test_split
 
 def concat_labels(dataset_name):
     all_file='D:/WWF_Det/WWF_Det/Drop_txt/'+dataset_name+'.txt'
-    file_base=os.path.join('D:/WWF_Det/WWF_Det/Drop_txt/',dataset_name)
+    file_base=os.path.join('D:/WWF_Det/WWF_Det/Drop_txt/',dataset_name+'/')
     file_list=os.listdir(file_base)
 
     with open(all_file, 'w') as f:
@@ -35,7 +35,7 @@ def data_generation(dataset_name):
     img_id=[i.replace('.jpg','',1)for i in x]
     txt_id=[i.replace('.txt','',1)for i in y]
 
-    err_id=np.unique(np.array([line.replace('\n','',1) for line in open(check_txt)])).tolist()
+    err_id=np.unique(np.array([line.replace('\n','',1) for line in open(check_txt) if line.replace('\n','',1)!=''])).tolist()
     for i in err_id:
          check_path=image_base+i+".jpg"
          assert os.path.exists(check_path),check_path+'not exists'
@@ -97,6 +97,6 @@ def data_generation(dataset_name):
 def combine(dataset_list=['sup9-part1','top14-part1','top14-part2','top14-part3','top14-part4','top14-part5','top14-part6','xuebao-120-all'],concat=True,generation=False):
     for dataset in dataset_list:
         if concat:concat_labels(dataset)
-        elif generation: data_generation(dataset)
+        if generation: data_generation(dataset)
 if __name__ == "__main__":
-    combine()
+    combine(concat=True, generation=True)
