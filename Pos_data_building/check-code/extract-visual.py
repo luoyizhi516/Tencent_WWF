@@ -126,6 +126,6 @@ def visual(dataset_name):
 
     #return df_store
 if __name__ == "__main__":
-    
-    extract_data('xuebao-120-all')
-    visual('xuebao-120-all')
+    dataset='xuebao-120-all'
+    extract_data(dataset)
+    visual(dataset)
