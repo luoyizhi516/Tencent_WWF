@@ -176,14 +176,15 @@ def unknown_check(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
                                 value=bbox['tags'][0]['value']
 
                                 inter=list(set(value)&set(position_list))
-                                if inter in ['未知类别全部出现','未知类别部分出现']:
-                                    print(pic_id,'contain unknown object')
-                                    f.write(str(pic_id)+'\n')
+                                if len(inter):
+                                    if inter[0] in ['未知类别全部出现','未知类别部分出现']:
+                                        print(pic_id,'contain unknown object')
+                                        f.write(str(pic_id)+'\n')
                                     
                                     
 
 if __name__ == "__main__":
     dataset='sup9-part1'
-    extract_data(dataset)
-    visual(dataset)
+    # extract_data(dataset)
+    # visual(dataset)
     unknown_check(dataset)
