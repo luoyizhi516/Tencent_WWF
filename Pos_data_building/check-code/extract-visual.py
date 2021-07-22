@@ -109,7 +109,7 @@ def visual(dataset_name):
                                 if inter==0:
                                     f.write(str(pic_id)+'\n')
                             else:
-                                print('error')
+                                print(pic_id,'box attribute missing')
                                 f.write(str(pic_id)+'\n')
 
                         else:
@@ -126,6 +126,6 @@ def visual(dataset_name):
 
     #return df_store
 if __name__ == "__main__":
-    dataset='xuebao-120-all'
+    dataset='top14-part6'
     extract_data(dataset)
     visual(dataset)
