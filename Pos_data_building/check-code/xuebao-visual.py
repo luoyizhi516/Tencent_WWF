@@ -32,7 +32,7 @@ def main():
         pic_id=row['题目ID']
         file_path=data_set+timu_data['Path']
         
-        visual_folder='D:/WWF_Det/WWF_Data/Pos_Data/xuebao-120-all/allset/visualizations/'
+        visual_folder='D:/WWF_Det/WWF_Data/Pos_Data/xuebao-120-all-improved/allset/visualizations/'
 
         if not os.path.exists(visual_folder): 
             os.makedirs(visual_folder, exist_ok = True)
@@ -50,16 +50,17 @@ def main():
             if len(bboxes):
                 for bbox in bboxes:
                     box_num+=1
-                    topleft=np.array([int(max(bbox['data'][0]['x'],0)),int(max(bbox['data'][0]['y'],0))])
-                    bottomrt=np.array([int(min(bbox['data'][2]['x'],imgx)),int(min(bbox['data'][2]['y'],imgy))])
-                    center_x=int((topleft[0]+bottomrt[0])/2)
-                    center_y=int((topleft[1]+bottomrt[1])/2)
-                    cv2.rectangle(img, tuple(topleft), tuple(bottomrt),(0,255,0), 2, 4)
+                    x_list=[bbox['data'][i]['x'] for i in range(0,4)]
+                    y_list=[bbox['data'][i]['y'] for i in range(0,4)]
+                    topleft=[int(max(min(x_list),0)),int(max(min(y_list),0))]
+                    bottomright=[int(min(max(x_list),imgx-1)),int(min(max(y_list),imgy-1))]
+                    cv2.rectangle(img, tuple(topleft), tuple(bottomright),(0,255,0), 2, 4)
+                    center_x=int((topleft[0]+bottomright[0])/2)
+                    center_y=int((topleft[1]+bottomright[1])/2)
                     if len(bbox['tags']):
                         if 'value'in bbox['tags'][0].keys():
                             value=bbox['tags'][0]['value']+[cate]
                             class_name=str(value)
-                            
 
                             img=cv2ImgAddText(img, class_name , int(topleft[0]),center_y,(0,255,255),20)
                         #img=cv2ImgAddText(img,str(pic_id),10,10,(0,0,0),30)

@@ -43,9 +43,10 @@ def main():
             
             with open(txt_path, 'w') as f:
                 for bbox in bboxes:
-                    box_num+=1
-                    topleft=[max(bbox['data'][0]['x'],0),max(bbox['data'][0]['y'],0)]
-                    bottomright=[min(bbox['data'][2]['x'],imgx),min(bbox['data'][2]['y'],imgy)]
+                    x_list=[bbox['data'][i]['x'] for i in range(0,4)]
+                    y_list=[bbox['data'][i]['y'] for i in range(0,4)]
+                    topleft=[max(min(x_list),0),max(min(y_list),0)]
+                    bottomright=[min(max(x_list),imgx-1),min(max(y_list),imgy-1)]
                     center_x=((topleft[0]+bottomright[0])/2)/imgx
                     center_y=((topleft[1]+bottomright[1])/2)/imgy
                     w=abs(bottomright[0]-topleft[0])/imgx
