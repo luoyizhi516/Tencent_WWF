@@ -83,8 +83,11 @@ def visual(dataset_name):
 
             if not os.path.exists(visual_folder): 
                 os.makedirs(visual_folder, exist_ok = True)
+            if dataset_name in ['top14-part2','top14-part1']:
+                file_path=file_path.replace('/Raw_Data/','/Raw_Data/top14-p1-p2/',1)
             file_path=file_path.replace('/top14-part','/top14-p',1)
             file_path=file_path.replace('-raw/','/',1)
+
             assert os.path.exists(file_path),file_path
             
             cate=timu_data['Path'].split('/')[1]
