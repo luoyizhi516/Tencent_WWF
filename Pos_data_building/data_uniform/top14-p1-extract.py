@@ -35,7 +35,7 @@ def main():
         if not os.path.exists(text_folder): 
             os.makedirs(text_folder, exist_ok = True)
         file_path=file_path.replace('D:/top14-dataset-part1','D:/WWF_Det/WWF_Data/Raw_Data/top14-p1-p2')
-        print(file_path)
+        #print(file_path)
         assert os.path.exists(file_path),file_path
         
         cate=timu_data['Path'].split('/')[0]

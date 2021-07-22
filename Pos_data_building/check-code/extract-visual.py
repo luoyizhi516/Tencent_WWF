@@ -17,7 +17,7 @@ def path_replacement(file_path,dataset_name):
         file_path=file_path.replace('/Raw_Data/','/Raw_Data/top14-p1-p2/',1)
         #file_path=file_path.replace('D:/top14-dataset-part1','D:/WWF_Det/WWF_Data/Raw_Data/top14-p1-p2')
     else:
-        file_path=file_path.replace('/top14-part','/top14-p',1)
+        file_path=file_path.replace('-part','-p',1)
         file_path=file_path.replace('-raw/','/',1)
     return file_path
 
@@ -143,8 +143,46 @@ def visual(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
     df=pd.DataFrame(dict(Counter(position_box_list)), index=[0])
     df.to_excel('D:/WWF_Det\WWF_Det\Pos_data_stat/position/'+dataset_name+'.xlsx',encoding='utf_8_sig',index=False)
 
-    #return df_store
+
+def unknown_check(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
+    csv_file='D:/WWF_Det/WWF_Det/Raw_annoations/'+dataset_name+'.csv'
+    df=pd.read_csv(csv_file)
+    
+    txt_path='D:/WWF_Det/WWF_Det/Drop_txt/'+ dataset_name + '/extra-unknown.txt'
+    position_list=['目标类别物体出现比例-全部出现','目标类别物体出现比例-部分出现','未知类别全部出现','未知类别部分出现']
+    
+    with open(txt_path, 'w') as f:
+        for index, row in tqdm(df.iterrows(), desc='Visualizing bounding boxes'):
+            timu_data=json.loads(row['题目数据'])
+            pic_id=row['题目ID']
+            file_path=data_set+timu_data['Path']
+            
+            visual_folder='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/allset/visualizations/'
+
+            if not os.path.exists(visual_folder): 
+                os.makedirs(visual_folder, exist_ok = True)
+            file_path=path_replacement(file_path,dataset_name)
+
+            assert os.path.exists(file_path),file_path
+            label_dict=json.loads(row['标注答案'])
+            if len(label_dict.keys()):
+                bboxes=label_dict['objects']
+                
+                if len(bboxes):
+                    for bbox in bboxes:
+                        if len(bbox['tags']):
+                            if 'value'in bbox['tags'][0].keys():
+                                value=bbox['tags'][0]['value']
+
+                                inter=list(set(value)&set(position_list))
+                                if inter in ['未知类别全部出现','未知类别部分出现']:
+                                    print(pic_id,'contain unknown object')
+                                    f.write(str(pic_id)+'\n')
+                                    
+                                    
+
 if __name__ == "__main__":
-    dataset='top14-part2'
+    dataset='top14-part3'
     extract_data(dataset)
     visual(dataset)
+    unknown_check(dataset)
