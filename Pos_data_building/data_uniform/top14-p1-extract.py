@@ -8,11 +8,17 @@ from tqdm import tqdm
 import pyfastcopy
 import json
 
+def path_replacement(file_path,dataset_name):
+    if dataset_name in ['top14-part2','top14-part1']:
+        file_path=file_path.replace('/Raw_Data/','/Raw_Data/top14-p1-p2/',1)
+    file_path=file_path.replace('/top14-part','/top14-p',1)
+    file_path=file_path.replace('-raw/','/',1)
+    return file_path
 
 
 
 def main():
-    csv_file='D:/WWF_Det/WWF_Det/Raw_annoations/top14-part2.csv'
+    csv_file='D:/WWF_Det/WWF_Det/Raw_annoations/top14-part1.csv'
     df=pd.read_csv(csv_file)
     data_set='D:/top14-dataset-part1/'
     box_num=0
@@ -28,6 +34,8 @@ def main():
             os.makedirs(image_folder, exist_ok = True)
         if not os.path.exists(text_folder): 
             os.makedirs(text_folder, exist_ok = True)
+        file_path=file_path.replace('D:/top14-dataset-part1','D:/WWF_Det/WWF_Data/Raw_Data/top14-p1-p2')
+        print(file_path)
         assert os.path.exists(file_path),file_path
         
         cate=timu_data['Path'].split('/')[0]

@@ -15,8 +15,10 @@ from collections import Counter
 def path_replacement(file_path,dataset_name):
     if dataset_name in ['top14-part2','top14-part1']:
         file_path=file_path.replace('/Raw_Data/','/Raw_Data/top14-p1-p2/',1)
-    file_path=file_path.replace('/top14-part','/top14-p',1)
-    file_path=file_path.replace('-raw/','/',1)
+        #file_path=file_path.replace('D:/top14-dataset-part1','D:/WWF_Det/WWF_Data/Raw_Data/top14-p1-p2')
+    else:
+        file_path=file_path.replace('/top14-part','/top14-p',1)
+        file_path=file_path.replace('-raw/','/',1)
     return file_path
 
 def cv2ImgAddText(img, text, left, top, textColor=(0, 255, 0), textSize=20):
@@ -28,10 +30,10 @@ def cv2ImgAddText(img, text, left, top, textColor=(0, 255, 0), textSize=20):
     draw.text((left, top), text, textColor, font=fontText)
     return cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2BGR)
 
-def extract_data(dataset_name):
+def extract_data(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
     csv_file='D:/WWF_Det/WWF_Det/Raw_annoations/'+dataset_name+'.csv'
     df=pd.read_csv(csv_file)
-    data_set='D:/WWF_Det/WWF_Data/Raw_Data/'
+
     cate_class=['baichunlu','chihu','gaoyuanshanchun','gaoyuantu','lanmaji','ma','malu','maoniu','mashe','person','xuebao','yang','yanyang','zanghu','chai','hanta','huangmomao','lang','lv','pao','sheli','shidiao','zongxiong']
 
     for index, row in tqdm(df.iterrows(), desc='Extracting data'):
@@ -47,8 +49,9 @@ def extract_data(dataset_name):
         file_path=path_replacement(file_path,dataset_name)
 
         assert os.path.exists(file_path),file_path
-        
-        cate=timu_data['Path'].split('/')[1]
+
+        index_pos=0 if dataset_name in ['top14-part2','top14-part1'] else 1
+        cate=timu_data['Path'].split('/')[index_pos]
         image_name=str(pic_id)+'.jpg'
         label_dict=json.loads(row['标注答案'])
         shutil.copyfile(file_path,image_folder+image_name)
@@ -73,10 +76,9 @@ def extract_data(dataset_name):
     
                     f.write(str(cate_id)+' '+str(center_x)+' '+str(center_y)+' '+str(w)+' '+str(h)+'\n')
 
-def visual(dataset_name):
+def visual(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
     csv_file='D:/WWF_Det/WWF_Det/Raw_annoations/'+dataset_name+'.csv'
     df=pd.read_csv(csv_file)
-    data_set='D:/WWF_Det/WWF_Data/Raw_Data/'
     
     txt_path='D:/WWF_Det/WWF_Det/Drop_txt/'+ dataset_name + '/extra.txt'
     position_list=['目标类别物体出现比例-全部出现','目标类别物体出现比例-部分出现','未知类别全部出现','未知类别部分出现']
@@ -94,8 +96,8 @@ def visual(dataset_name):
             file_path=path_replacement(file_path,dataset_name)
 
             assert os.path.exists(file_path),file_path
-            
-            cate=timu_data['Path'].split('/')[1]
+            index_pos=0 if dataset_name in ['top14-part2','top14-part1'] else 1
+            cate=timu_data['Path'].split('/')[index_pos]
             image_name=str(pic_id)+'.jpg'
             label_dict=json.loads(row['标注答案'])
             if len(label_dict.keys()):
@@ -144,5 +146,5 @@ def visual(dataset_name):
     #return df_store
 if __name__ == "__main__":
     dataset='top14-part2'
-    #extract_data(dataset)
+    extract_data(dataset)
     visual(dataset)
