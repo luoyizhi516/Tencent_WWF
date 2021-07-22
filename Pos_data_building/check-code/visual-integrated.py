@@ -21,13 +21,12 @@ def cv2ImgAddText(img, text, left, top, textColor=(0, 255, 0), textSize=20):
 
 
 
-def main():
-    csv_file='D:/WWF_Det/WWF_Det/Raw_annoations/xuebao-120-all.csv'
+def visual(dataset_name):
+    csv_file='D:/WWF_Det/WWF_Det/Raw_annoations/'+dataset_name+'.csv'
     df=pd.read_csv(csv_file)
     data_set='D:/WWF_Det/WWF_Data/Raw_Data/'
     box_num=0
-    cate_class=['baichunlu','chihu','gaoyuanshanchun','gaoyuantu','lanmaji','ma','malu','maoniu','mashe','person','xuebao','yang','yanyang','zanghu','chai','hanta','huangmomao','lang','lv','pao','sheli','shidiao','zongxiong']
-    txt_path=r'D:\WWF_Det\WWF_Det\Drop_txt\xuebao-120-all/extra.txt'
+    txt_path='D:/WWF_Det/WWF_Det/Drop_txt/'+ dataset_name + '/extra.txt'
     position_list=['目标类别物体出现比例-全部出现','目标类别物体出现比例-部分出现','未知类别全部出现','未知类别部分出现']
     with open(txt_path, 'w') as f:
         for index, row in tqdm(df.iterrows()):
@@ -87,4 +86,4 @@ def main():
 
     #return df_store
 if __name__ == "__main__":
-    main()
+    visual('xuebao-120-all')
