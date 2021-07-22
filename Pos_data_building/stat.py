@@ -14,13 +14,11 @@ from sklearn.model_selection import train_test_split
 
 
 
-def main():
+def main(dataset_name):
     
-    dataset_name='xuebao-120-all'
-    check_txt=r"D:/WWF_Det\WWF_Det\Drop_txt/xuebao-120-all.txt"
-    stat_csv='D:/WWF_Det/WWF_Det/Pos_data_stat/xuebao-dataset-stat.csv'
-
-    #"D:\WWF\data-check-list\check_list\check-all.txt"
+    
+    check_txt="D:/WWF_Det\WWF_Det\Drop_txt/"+dataset_name+".txt"
+    stat_csv='D:/WWF_Det/WWF_Det/Pos_data_stat/datacomposition/'+dataset_name+'.csv'
 
     image_base,label_base='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/allset/images/','D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/allset/labels/'
     
