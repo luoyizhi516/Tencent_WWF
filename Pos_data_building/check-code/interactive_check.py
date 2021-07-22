@@ -12,7 +12,7 @@ def main():
         for i in img_list[3300:]:
             img_dir=base+i
             print(img_dir)
-    
+            
             img=cv2.imread(img_dir)
             win_name=img_dir
             cv2.namedWindow(win_name,0)

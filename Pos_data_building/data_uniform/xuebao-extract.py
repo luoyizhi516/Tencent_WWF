@@ -17,7 +17,7 @@ def main():
     data_set='D:/WWF_Det/WWF_Data/Raw_Data/'
     box_num=0
     cate_class=['baichunlu','chihu','gaoyuanshanchun','gaoyuantu','lanmaji','ma','malu','maoniu','mashe','person','xuebao','yang','yanyang','zanghu','chai','hanta','huangmomao','lang','lv','pao','sheli','shidiao','zongxiong']
-    #cate_class=['person','chihu','zanghu','yang','maoniu','lanmaji','xuebao','gaoyuantu','yanyang']
+
     for index, row in tqdm(df.iterrows()):
         timu_data=json.loads(row['题目数据'])
         pic_id=row['题目ID']
