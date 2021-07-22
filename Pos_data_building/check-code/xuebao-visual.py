@@ -28,9 +28,9 @@ def main():
     box_num=0
     cate_class=['baichunlu','chihu','gaoyuanshanchun','gaoyuantu','lanmaji','ma','malu','maoniu','mashe','person','xuebao','yang','yanyang','zanghu','chai','hanta','huangmomao','lang','lv','pao','sheli','shidiao','zongxiong']
     txt_path=r'D:\WWF_Det\WWF_Det\Drop_txt\xuebao-120-all/extra.txt'
-
+    position_list=['目标类别物体出现比例-全部出现','目标类别物体出现比例-部分出现','未知类别全部出现','未知类别部分出现']
     with open(txt_path, 'w') as f:
-        for index, row in tqdm(df.iterrows()):
+        for index, row in (df.iterrows()):
             timu_data=json.loads(row['题目数据'])
             pic_id=row['题目ID']
             file_path=data_set+timu_data['Path']
@@ -66,6 +66,15 @@ def main():
                                 class_name=str(value)
 
                                 img=cv2ImgAddText(img, class_name , int(topleft[0]),center_y,(0,255,255),20)
+                                inter=len(set(value)&set(position_list))
+                                if inter==0:
+                                    f.write(str(pic_id)+'\n')
+                            #else:f.write(str(pic_id)+'\n')
+
+                        else:
+                            print(pic_id,'value missing')
+                            f.write(str(pic_id)+'\n')
+
                             #img=cv2ImgAddText(img,str(pic_id),10,10,(0,0,0),30)
                 #ONLY plot the image if it is labeled.
                 if not os.path.exists(visual_folder+image_name):
