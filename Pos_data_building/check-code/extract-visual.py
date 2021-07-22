@@ -130,7 +130,7 @@ def visual(dataset_name):
                 # if not os.path.exists(visual_folder+image_name):
                 #     cv2.imwrite(visual_folder+image_name,img)
     df=pd.DataFrame(dict(Counter(position_box_list)), index=[0])
-    df.to_csv('D:/WWF_Det\WWF_Det\Pos_data_stat/position/'+dataset_name+'.csv',encoding='utf_8_sig',index=False)
+    df.to_excel('D:/WWF_Det\WWF_Det\Pos_data_stat/position/'+dataset_name+'.xlsx',encoding='utf_8_sig',index=False)
 
     #return df_store
 if __name__ == "__main__":
