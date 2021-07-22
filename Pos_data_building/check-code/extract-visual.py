@@ -107,6 +107,7 @@ def visual(dataset_name):
                                 img=cv2ImgAddText(img, class_name , int(topleft[0]),center_y,(0,255,255),20)
                                 inter=len(set(value)&set(position_list))
                                 if inter==0:
+                                    print(pic_id,'position missing')
                                     f.write(str(pic_id)+'\n')
                             else:
                                 print(pic_id,'box attribute missing')
@@ -126,6 +127,6 @@ def visual(dataset_name):
 
     #return df_store
 if __name__ == "__main__":
-    dataset='top14-part6'
+    dataset='top14-part5'
     extract_data(dataset)
     visual(dataset)
