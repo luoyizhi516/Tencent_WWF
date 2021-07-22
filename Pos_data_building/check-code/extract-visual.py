@@ -96,19 +96,19 @@ def visual(dataset_name):
                 
                 if len(bboxes):
                     for bbox in bboxes:
-                        x_list=[bbox['data'][i]['x'] for i in range(0,4)]
-                        y_list=[bbox['data'][i]['y'] for i in range(0,4)]
-                        topleft=[int(max(min(x_list),0)),int(max(min(y_list),0))]
-                        bottomright=[int(min(max(x_list),imgx-1)),int(min(max(y_list),imgy-1))]
-                        cv2.rectangle(img, tuple(topleft), tuple(bottomright),(0,255,0), 2, 4)
-                        center_x=int((topleft[0]+bottomright[0])/2)
-                        center_y=int((topleft[1]+bottomright[1])/2)
+                        # x_list=[bbox['data'][i]['x'] for i in range(0,4)]
+                        # y_list=[bbox['data'][i]['y'] for i in range(0,4)]
+                        # topleft=[int(max(min(x_list),0)),int(max(min(y_list),0))]
+                        # bottomright=[int(min(max(x_list),imgx-1)),int(min(max(y_list),imgy-1))]
+                        # cv2.rectangle(img, tuple(topleft), tuple(bottomright),(0,255,0), 2, 4)
+                        # center_x=int((topleft[0]+bottomright[0])/2)
+                        # center_y=int((topleft[1]+bottomright[1])/2)
                         if len(bbox['tags']):
                             if 'value'in bbox['tags'][0].keys():
                                 value=bbox['tags'][0]['value']+[cate]
                                 class_name=str(value)
 
-                                img=cv2ImgAddText(img, class_name , int(topleft[0]),center_y,(0,255,255),20)
+                                #img=cv2ImgAddText(img, class_name , int(topleft[0]),center_y,(0,255,255),20)
                                 inter=list(set(value)&set(position_list))
                                 if len(inter)==0:
                                     print(pic_id,'position missing')
@@ -127,12 +127,13 @@ def visual(dataset_name):
                     print(str(pic_id),'no box')
                     f.write(str(pic_id)+'\n')
                 #ONLY plot the image if it is labeled.
-                if not os.path.exists(visual_folder+image_name):
-                    cv2.imwrite(visual_folder+image_name,img)
-    print(Counter(position_box_list))
+                # if not os.path.exists(visual_folder+image_name):
+                #     cv2.imwrite(visual_folder+image_name,img)
+    df=pd.DataFrame(dict(Counter(position_box_list)), index=[0])
+    df.to_csv('D:/WWF_Det\WWF_Det\Pos_data_stat/'+dataset_name+'.csv')
 
     #return df_store
 if __name__ == "__main__":
     dataset='top14-part4'
-    extract_data(dataset)
+    #extract_data(dataset)
     visual(dataset)
