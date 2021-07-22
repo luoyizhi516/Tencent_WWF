@@ -11,6 +11,14 @@ import json
 from xml.etree import ElementTree
 from PIL import Image, ImageDraw, ImageFont
 from collections import Counter
+
+def path_replacement(file_path,dataset_name):
+    if dataset_name in ['top14-part2','top14-part1']:
+        file_path=file_path.replace('/Raw_Data/','/Raw_Data/top14-p1-p2/',1)
+    file_path=file_path.replace('/top14-part','/top14-p',1)
+    file_path=file_path.replace('-raw/','/',1)
+    return file_path
+
 def cv2ImgAddText(img, text, left, top, textColor=(0, 255, 0), textSize=20):
     # 判断是否为opencv图片类型
     if (isinstance(img, np.ndarray)):
@@ -36,7 +44,7 @@ def extract_data(dataset_name):
             os.makedirs(image_folder, exist_ok = True)
         if not os.path.exists(text_folder): 
             os.makedirs(text_folder, exist_ok = True)
-        file_path=file_path.replace('/top14-part4-raw/','/top14-p4/',1)
+        file_path=path_replacement(file_path,dataset_name)
 
         assert os.path.exists(file_path),file_path
         
@@ -83,10 +91,7 @@ def visual(dataset_name):
 
             if not os.path.exists(visual_folder): 
                 os.makedirs(visual_folder, exist_ok = True)
-            if dataset_name in ['top14-part2','top14-part1']:
-                file_path=file_path.replace('/Raw_Data/','/Raw_Data/top14-p1-p2/',1)
-            file_path=file_path.replace('/top14-part','/top14-p',1)
-            file_path=file_path.replace('-raw/','/',1)
+            file_path=path_replacement(file_path,dataset_name)
 
             assert os.path.exists(file_path),file_path
             
@@ -100,19 +105,19 @@ def visual(dataset_name):
                 
                 if len(bboxes):
                     for bbox in bboxes:
-                        # x_list=[bbox['data'][i]['x'] for i in range(0,4)]
-                        # y_list=[bbox['data'][i]['y'] for i in range(0,4)]
-                        # topleft=[int(max(min(x_list),0)),int(max(min(y_list),0))]
-                        # bottomright=[int(min(max(x_list),imgx-1)),int(min(max(y_list),imgy-1))]
-                        # cv2.rectangle(img, tuple(topleft), tuple(bottomright),(0,255,0), 2, 4)
-                        # center_x=int((topleft[0]+bottomright[0])/2)
-                        # center_y=int((topleft[1]+bottomright[1])/2)
+                        x_list=[bbox['data'][i]['x'] for i in range(0,4)]
+                        y_list=[bbox['data'][i]['y'] for i in range(0,4)]
+                        topleft=[int(max(min(x_list),0)),int(max(min(y_list),0))]
+                        bottomright=[int(min(max(x_list),imgx-1)),int(min(max(y_list),imgy-1))]
+                        cv2.rectangle(img, tuple(topleft), tuple(bottomright),(0,255,0), 2, 4)
+                        center_x=int((topleft[0]+bottomright[0])/2)
+                        center_y=int((topleft[1]+bottomright[1])/2)
                         if len(bbox['tags']):
                             if 'value'in bbox['tags'][0].keys():
                                 value=bbox['tags'][0]['value']+[cate]
                                 class_name=str(value)
 
-                                #img=cv2ImgAddText(img, class_name , int(topleft[0]),center_y,(0,255,255),20)
+                                img=cv2ImgAddText(img, class_name , int(topleft[0]),center_y,(0,255,255),20)
                                 inter=list(set(value)&set(position_list))
                                 if len(inter)==0:
                                     print(pic_id,'position missing')
@@ -131,8 +136,8 @@ def visual(dataset_name):
                     print(str(pic_id),'no box')
                     f.write(str(pic_id)+'\n')
                 #ONLY plot the image if it is labeled.
-                # if not os.path.exists(visual_folder+image_name):
-                #     cv2.imwrite(visual_folder+image_name,img)
+                if not os.path.exists(visual_folder+image_name):
+                    cv2.imwrite(visual_folder+image_name,img)
     df=pd.DataFrame(dict(Counter(position_box_list)), index=[0])
     df.to_excel('D:/WWF_Det\WWF_Det\Pos_data_stat/position/'+dataset_name+'.xlsx',encoding='utf_8_sig',index=False)
 
