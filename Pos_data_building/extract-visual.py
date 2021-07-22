@@ -180,12 +180,11 @@ def unknown_check(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
                                     if inter[0] in ['未知类别全部出现','未知类别部分出现']:
                                         print(pic_id,'contain unknown object')
                                         f.write(str(pic_id)+'\n')
-
+                           
 def combine(dataset_list=['sup9-part1','top14-part1','top14-part2','top14-part3','top14-part4','top14-part5','top14-part6','xuebao-120-all'],extract=False,visual=False,unknown=True):
     for dataset in dataset_list:
         if extract:extract_data(dataset)
-        elif visual:visual_data(dataset)
-        elif unknown:unknown_check(dataset)                               
-
+        if visual:visual_data(dataset)
+        if unknown:unknown_check(dataset)  
 if __name__ == "__main__":
-    combine()
+    combine(extract=False,visual=True)
