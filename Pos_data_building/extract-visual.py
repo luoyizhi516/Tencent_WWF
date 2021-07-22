@@ -153,7 +153,7 @@ def unknown_check(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
     position_list=['目标类别物体出现比例-全部出现','目标类别物体出现比例-部分出现','未知类别全部出现','未知类别部分出现']
     
     with open(txt_path, 'w') as f:
-        for index, row in tqdm(df.iterrows(), desc='Visualizing bounding boxes'):
+        for index, row in tqdm(df.iterrows(), desc='Checking unknown labels'):
             timu_data=json.loads(row['题目数据'])
             pic_id=row['题目ID']
             file_path=data_set+timu_data['Path']
