@@ -30,7 +30,7 @@ def main():
     txt_path=r'D:\WWF_Det\WWF_Det\Drop_txt\xuebao-120-all/extra.txt'
     position_list=['目标类别物体出现比例-全部出现','目标类别物体出现比例-部分出现','未知类别全部出现','未知类别部分出现']
     with open(txt_path, 'w') as f:
-        for index, row in (df.iterrows()):
+        for index, row in tqdm(df.iterrows()):
             timu_data=json.loads(row['题目数据'])
             pic_id=row['题目ID']
             file_path=data_set+timu_data['Path']
@@ -69,17 +69,20 @@ def main():
                                 inter=len(set(value)&set(position_list))
                                 if inter==0:
                                     f.write(str(pic_id)+'\n')
-                            #else:f.write(str(pic_id)+'\n')
+                            else:
+                                print('error')
+                                f.write(str(pic_id)+'\n')
 
                         else:
                             print(pic_id,'value missing')
                             f.write(str(pic_id)+'\n')
 
-                            #img=cv2ImgAddText(img,str(pic_id),10,10,(0,0,0),30)
+                elif not len(bboxes):
+                    print('no box')
+                    f.write(str(pic_id)+'\n')
                 #ONLY plot the image if it is labeled.
                 if not os.path.exists(visual_folder+image_name):
                     cv2.imwrite(visual_folder+image_name,img)
-                else:f.write(str(pic_id)+'\n')
 
 
     #return df_store
