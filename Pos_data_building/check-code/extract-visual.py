@@ -77,7 +77,7 @@ def extract_data(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
     
                     f.write(str(cate_id)+' '+str(center_x)+' '+str(center_y)+' '+str(w)+' '+str(h)+'\n')
 
-def visual(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
+def visual_data(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
     csv_file='D:/WWF_Det/WWF_Det/Raw_annoations/'+dataset_name+'.csv'
     df=pd.read_csv(csv_file)
     
@@ -180,11 +180,12 @@ def unknown_check(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
                                     if inter[0] in ['未知类别全部出现','未知类别部分出现']:
                                         print(pic_id,'contain unknown object')
                                         f.write(str(pic_id)+'\n')
-                                    
-                                    
+
+def combine(dataset_list=['sup9-part1','top14-part1','top14-part2','top14-part3','top14-part4','top14-part5','top14-part6','xuebao-120-all'],extract=False,visual=False,unknown=True):
+    for dataset in dataset_list:
+        if extract:extract_data(dataset)
+        elif visual:visual_data(dataset)
+        elif unknown:unknown_check(dataset)                               
 
 if __name__ == "__main__":
-    dataset='sup9-part1'
-    # extract_data(dataset)
-    # visual(dataset)
-    unknown_check(dataset)
+    combine()
