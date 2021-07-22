@@ -12,11 +12,11 @@ from sklearn.model_selection import train_test_split
 
 
 def main():
-    image_base,label_base='data/pri-sup-transformed/allset/images/','data/pri-sup-transformed/allset/labels/'
+    image_base,label_base='D:/WWF_Det\WWF_Data\Pos_Data\sup9-part1/allset/images/','D:/WWF_Det\WWF_Data\Pos_Data\sup9-part1/allset/labels/'
     x,y=os.listdir(image_base),os.listdir(label_base)
-    x_train,x_tar,y_train,y_tar=train_test_split(x,y,test_size=0.2,random_state=2021)
-    train_folder_img,train_folder_txt='data/pri-sup-transformed/conservation/train/images/','data/pri-sup-transformed/conservation/train/labels/'
-    test_folder_img,test_folder_txt='data/pri-sup-transformed/conservation/val/images/','data/pri-sup-transformed/conservation/val/labels/'
+    x_train,x_tar,y_train,y_tar=train_test_split(_,y,test_size=0.2,random_state=2021)
+    train_folder_img,train_folder_txt='D:/WWF_Det\WWF_Data\Pos_Data\sup9-part1/conservation/train/images/','D:/WWF_Det\WWF_Data\Pos_Data\sup9-part1/conservation/train/labels/'
+    test_folder_img,test_folder_txt='D:/WWF_Det\WWF_Data\Pos_Data\sup9-part1/conservation/val/images/','D:/WWF_Det\WWF_Data\Pos_Data\sup9-part1/conservation/val/labels/'
     if not os.path.exists(train_folder_img): os.makedirs(train_folder_img)
     if not os.path.exists(train_folder_txt): os.makedirs(train_folder_txt)
     if not os.path.exists(test_folder_img): os.makedirs(test_folder_img)

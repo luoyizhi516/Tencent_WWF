@@ -22,8 +22,8 @@ def main():
         timu_data=json.loads(row['题目数据'])
         pic_id=row['题目ID']
         file_path=data_set+timu_data['Path']
-        image_folder='D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1/allset/images/'
-        text_folder='D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1/allset/labels/'
+        image_folder='D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1-/allset/images/'
+        text_folder='D:/WWF_Det/WWF_Data/Pos_Data/sup9-part1-/allset/labels/'
         if not os.path.exists(image_folder): 
             os.makedirs(image_folder, exist_ok = True)
         if not os.path.exists(text_folder): 
@@ -33,7 +33,7 @@ def main():
         cate=timu_data['Path'].split('/')[1]
         image_name=str(pic_id)+'.jpg'
         label_dict=json.loads(row['标注答案'])
-        shutil.copyfile(file_path,image_folder+image_name)
+        #shutil.copyfile(file_path,image_folder+image_name)
         if len(label_dict.keys()):
             bboxes=label_dict['objects']
             img = cv2.imread(file_path)
@@ -53,7 +53,7 @@ def main():
                     cate_id=cate_class.index(cate)
     
                     f.write(str(cate_id)+' '+str(center_x)+' '+str(center_y)+' '+str(w)+' '+str(h)+'\n')
-   
+            shutil.copyfile(file_path,image_folder+image_name)
     
      
     #return df_store
