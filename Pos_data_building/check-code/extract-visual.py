@@ -10,6 +10,7 @@ import json
 
 from xml.etree import ElementTree
 from PIL import Image, ImageDraw, ImageFont
+from collections import Counter
 def cv2ImgAddText(img, text, left, top, textColor=(0, 255, 0), textSize=20):
     # 判断是否为opencv图片类型
     if (isinstance(img, np.ndarray)):
@@ -106,12 +107,12 @@ def visual(dataset_name):
                                 class_name=str(value)
 
                                 img=cv2ImgAddText(img, class_name , int(topleft[0]),center_y,(0,255,255),20)
-                                inter=set(value)&set(position_list)
+                                inter=list(set(value)&set(position_list))
                                 if len(inter)==0:
                                     print(pic_id,'position missing')
                                     f.write(str(pic_id)+'\n')
                                 else:
-                                    position_box_list.append(inter)
+                                    position_box_list.append(inter[0])
                             else:
                                 print(pic_id,'box attribute missing')
                                 f.write(str(pic_id)+'\n')
@@ -126,7 +127,7 @@ def visual(dataset_name):
                 #ONLY plot the image if it is labeled.
                 if not os.path.exists(visual_folder+image_name):
                     cv2.imwrite(visual_folder+image_name,img)
-    print(position_box_list)
+    print(Counter(position_box_list))
 
     #return df_store
 if __name__ == "__main__":
