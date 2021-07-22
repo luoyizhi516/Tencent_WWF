@@ -83,7 +83,8 @@ def visual(dataset_name):
 
             if not os.path.exists(visual_folder): 
                 os.makedirs(visual_folder, exist_ok = True)
-            file_path=file_path.replace('/top14-part4-raw/','/top14-p4/',1)
+            file_path=file_path.replace('/top14-part','/top14-p',1)
+            file_path=file_path.replace('-raw/','/',1)
             assert os.path.exists(file_path),file_path
             
             cate=timu_data['Path'].split('/')[1]
@@ -134,6 +135,6 @@ def visual(dataset_name):
 
     #return df_store
 if __name__ == "__main__":
-    dataset='top14-part6'
+    dataset='top14-part2'
     #extract_data(dataset)
     visual(dataset)
