@@ -6,12 +6,11 @@ def main():
     all_file='D:/WWF_Det/WWF_Det/Drop_txt/xuebao-120-all.txt'
     file_base='D:/WWF_Det/WWF_Det/Drop_txt/xuebao-120-all/'
     file_list=os.listdir(file_base)
-    #print(file_list)
-    #file = open(all_file,'r')
+
     with open(all_file, 'w') as f:
         for file in file_list:
             with open(file_base+file, 'r') as f2:
-                #f.write('\n')
+
                 for i in f2:
                     f.write(i)
 if __name__ == "__main__":

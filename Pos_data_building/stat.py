@@ -12,13 +12,22 @@ import pyfastcopy
 import json,sklearn
 from sklearn.model_selection import train_test_split
 
+def concat_labels(dataset_name):
+    all_file='D:/WWF_Det/WWF_Det/Drop_txt/'+dataset_name+'.txt'
+    file_base=os.path.join('D:/WWF_Det/WWF_Det/Drop_txt/',dataset_name)
+    file_list=os.listdir(file_base)
 
+    with open(all_file, 'w') as f:
+        for file in file_list:
+            with open(file_base+file, 'r') as f2:
 
-def main(dataset_name):
+                for i in f2:
+                    f.write(i)
     
+def data_generation(dataset_name):
     
     check_txt="D:/WWF_Det\WWF_Det\Drop_txt/"+dataset_name+".txt"
-    stat_csv='D:/WWF_Det/WWF_Det/Pos_data_stat/datacomposition/'+dataset_name+'.csv'
+    stat_csv='D:/WWF_Det/WWF_Det/Pos_data_stat/data_composition/'+dataset_name+'.csv'
 
     image_base,label_base='D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/allset/images/','D:/WWF_Det/WWF_Data/Pos_Data/'+dataset_name+'/allset/labels/'
     
@@ -84,7 +93,10 @@ def main(dataset_name):
     for ID in tqdm(true_kongpai_id):
         imgID=ID+'.jpg'
         shutil.copyfile(image_base+imgID,x_empty+imgID)
-   
+
+def combine(dataset_list=['sup9-part1','top14-part1','top14-part2','top14-part3','top14-part4','top14-part5','top14-part6','xuebao-120-all'],concat=True,generation=False):
+    for dataset in dataset_list:
+        if concat:concat_labels(dataset)
+        elif generation: data_generation(dataset)
 if __name__ == "__main__":
-    
-    main()
+    combine()
