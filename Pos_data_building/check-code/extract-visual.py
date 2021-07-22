@@ -66,9 +66,10 @@ def visual(dataset_name):
     csv_file='D:/WWF_Det/WWF_Det/Raw_annoations/'+dataset_name+'.csv'
     df=pd.read_csv(csv_file)
     data_set='D:/WWF_Det/WWF_Data/Raw_Data/'
-    box_num=0
+    
     txt_path='D:/WWF_Det/WWF_Det/Drop_txt/'+ dataset_name + '/extra.txt'
     position_list=['目标类别物体出现比例-全部出现','目标类别物体出现比例-部分出现','未知类别全部出现','未知类别部分出现']
+    position_box_list=[]
     with open(txt_path, 'w') as f:
         for index, row in tqdm(df.iterrows(), desc='Visualizing bounding boxes'):
             timu_data=json.loads(row['题目数据'])
@@ -105,10 +106,12 @@ def visual(dataset_name):
                                 class_name=str(value)
 
                                 img=cv2ImgAddText(img, class_name , int(topleft[0]),center_y,(0,255,255),20)
-                                inter=len(set(value)&set(position_list))
-                                if inter==0:
+                                inter=set(value)&set(position_list)
+                                if len(inter)==0:
                                     print(pic_id,'position missing')
                                     f.write(str(pic_id)+'\n')
+                                else:
+                                    position_box_list.append(inter)
                             else:
                                 print(pic_id,'box attribute missing')
                                 f.write(str(pic_id)+'\n')
@@ -123,10 +126,10 @@ def visual(dataset_name):
                 #ONLY plot the image if it is labeled.
                 if not os.path.exists(visual_folder+image_name):
                     cv2.imwrite(visual_folder+image_name,img)
-
+    print(position_box_list)
 
     #return df_store
 if __name__ == "__main__":
     dataset='top14-part5'
-    extract_data(dataset)
+    #extract_data(dataset)
     visual(dataset)
