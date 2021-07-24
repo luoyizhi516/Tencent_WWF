@@ -30,8 +30,8 @@ def main():
     base,start,end=opt.base,opt.start,opt.end
     for i in os.listdir(base):
         cate_folder=os.path.join(base,i)
-        video_folder=os.path.join(cate_folder,'videos')
-        frame_folder=os.path.join(cate_folder,'frames')
+        video_folder=os.path.join(cate_folder,'')
+        frame_folder=cate_folder.replace('valset-vid-v1','valset-frames-v1',1)
         if not os.path.exists(frame_folder):
             os.makedirs(frame_folder)
         
@@ -39,7 +39,7 @@ def main():
         
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--base', type=str, default=r'D:\WWF_Det\WWF_Data\Final_Data\valset-frames-v1', help='dataset_store_dir')
+    parser.add_argument('--base', type=str, default=r'D:\WWF_Det\WWF_Data\Final_Data\valset-vid-v1', help='dataset_store_dir')
     parser.add_argument('--start', type=int, default=0, help='start_folder')
     parser.add_argument('--end', type=int, default=15, help='end_folder')
 
