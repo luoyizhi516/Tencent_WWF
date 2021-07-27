@@ -187,4 +187,4 @@ def combine(dataset_list=['sup9-part1','top14-part1','top14-part2','top14-part3'
         if visual:visual_data(dataset)
         if unknown:unknown_check(dataset)  
 if __name__ == "__main__":
-    combine(extract=False,visual=True)
+    combine(dataset_list=['top14-part8'],extract=True,visual=True)
