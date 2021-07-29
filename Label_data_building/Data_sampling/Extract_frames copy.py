@@ -24,14 +24,15 @@ def extract_frames(src_path,target_path):
         #     os.mkdir(cur_new_path)
         dest = cur_new_path +'-%04d.jpg'
         #print(dest)
-        os.system("ffmpeg" + " -i" +' ' +filename +" -r" +" 30" +' '+ dest)
-        #os.system("ffmpeg" + " -i" +' ' +filename +" -r" +" 0.5" +' -q:v 2 -f image2'+' '+ dest)
+        #os.system("ffmpeg" + " -i" +' ' +filename +" -r" +" 30" +' '+ dest)
+        os.system("ffmpeg" + " -i" +' ' +filename +" -r" +" 30" +' -q:v 2 -f image2'+' '+ dest)
 def main():
     base,start,end=opt.base,opt.start,opt.end
     for i in os.listdir(base):
         cate_folder=os.path.join(base,i)
         video_folder=os.path.join(cate_folder,'')
-        frame_folder=os.path.join(cate_folder,'frames')
+        frame_folder=os.path.join('D:/WWF_Det\WWF_Data\Final_Data/valset-frames-v1-high/',i)
+        
         if not os.path.exists(frame_folder):
             os.makedirs(frame_folder)
         
@@ -39,7 +40,7 @@ def main():
         
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--base', type=str, default=r'E:\kongpai\new', help='dataset_store_dir')
+    parser.add_argument('--base', type=str, default=r'D:\WWF_Det\WWF_Data\Final_Data\valset-vid-v1', help='dataset_store_dir')
     parser.add_argument('--start', type=int, default=0, help='start_folder')
     parser.add_argument('--end', type=int, default=15, help='end_folder')
 
