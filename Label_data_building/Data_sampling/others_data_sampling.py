@@ -20,7 +20,7 @@ def main():
     new_base='D:/rest_cate/'
     undone_list=[cate for cate in os.listdir(original_base) if cate not in cate_class]
     for i in undone_list:
-        os.system('cp - R '+original_base+i+' '+new_base+i+'/')
+        os.system('cp -R '+original_base+i+'/ '+new_base+i+'/')
         
 if __name__ == "__main__":
     
