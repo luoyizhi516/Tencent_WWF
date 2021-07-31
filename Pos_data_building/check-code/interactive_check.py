@@ -6,10 +6,10 @@ def main():
     base,txt_path,start,end=opt.img_dir,opt.text_dir,opt.start,opt.end
     img_list=os.listdir(base)
     
-    txt_path=r'D:\WWF_Det\WWF_Det\Drop_txt\top14-part8/check3200-3300.txt'
+    txt_path=r'D:\WWF_Det\WWF_Det\Drop_txt\top14-part8/check3800-all.txt'
     with open(txt_path, 'w') as f:
 
-        for i in img_list[3200:3300]:
+        for i in img_list[3800:]:
             img_dir=base+i
             print(img_dir)
             
