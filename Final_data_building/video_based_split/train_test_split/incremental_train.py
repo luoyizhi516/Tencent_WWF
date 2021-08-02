@@ -16,10 +16,10 @@ from sklearn.model_selection import train_test_split
 
 
 def main():
-    increment_datasets=['top14-part4','top14-part5','top14-part6','xuebao-120-all']
+    increment_datasets=['top14-part4','top14-part5','top14-part6','top14-part7','top14-part8','xuebao-120-all']
     suplement_datasets=['sup9-part1']
     splited_data_base='D:/WWF_Det/WWF_Data/Final_Data/top14-p123/'
-    final_data_base='D:/WWF_Det/WWF_Data/Final_Data/top23-p123456-p1-xuebao/'
+    final_data_base='D:/WWF_Det/WWF_Data/Final_Data/top23-p12345678-p1-xuebao/'
     os.system("cp -R "+splited_data_base+' '+final_data_base)
     for i in increment_datasets:
         valuableset='D:/WWF_Det/WWF_Data/Pos_Data/'+i+'/valuableset/'
