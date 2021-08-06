@@ -37,7 +37,7 @@ def extract_data(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
 
     cate_class=['baichunlu','chihu','zanghu','maoniu','ma','mashe','yang','yanyang','person','xuebao','malu','lanmaji','gaoyuanshanchun','gaoyuantu', \
         'lang','pao','shidiao','sheli','lv','chai','hanta','zongxiong','huangmomao',
-        'anfuxueji','banchishanchun','banweizhenji','chihu+shidiao','danfuxueji','gaoyuanxuetu','gou','hongcuiya','hongsun','hongzuishanya','hongweiqu','huangyou','huwujiu',
+        'anfuxueji','banchishanchun','banweizhenji','chihu+shidiao','danfuxueji','gaoyuanxuetu','gou','hongcuiya','hongsun','hongzuishanya','honweiqu','huangyou','huwujiu',
         'kuang','laoshu','maque','niaolei','paolu','shanque','shiji','shitu','shu','shutu','wuya','xiangyou','xique','xuege','xueji','xuezhi','you',
         'zongbeidong'
         ]
@@ -63,6 +63,9 @@ def extract_data(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
         if len(label_dict.keys()):
             bboxes=label_dict['objects']
             img = cv2.imread(file_path)
+            if img is None:
+                print(file_path)
+                continue
             imgy,imgx=img.shape[:2]
             txt_path=text_folder+os.path.splitext(image_name)[0]+'.txt'
             
@@ -108,6 +111,9 @@ def visual_data(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
             if len(label_dict.keys()):
                 bboxes=label_dict['objects']
                 img = cv2.imread(file_path)
+                if img is None:
+                    print(file_path)
+                    continue
                 imgy,imgx=img.shape[:2]
                 
                 if len(bboxes):
@@ -193,4 +199,4 @@ def combine(dataset_list=['sup9-part1','top14-part1','top14-part2','top14-part3'
 if __name__ == "__main__":
     dataset_list=['sup9-part1','top14-part1','top14-part2','top14-part3',\
                 'top14-part4','top14-part5','top14-part6','xuebao-120-all','top14-part7','top14-part8']
-    combine(dataset_list=['rest-part1'],extract=True,visual=True)
+    combine(dataset_list=['rest-part2'],extract=True,visual=True)
