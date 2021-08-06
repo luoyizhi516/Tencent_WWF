@@ -35,8 +35,12 @@ def extract_data(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
     csv_file='D:/WWF_Det/WWF_Det/Raw_annoations/'+dataset_name+'.csv'
     df=pd.read_csv(csv_file)
 
-    cate_class=['baichunlu','chihu','gaoyuanshanchun','gaoyuantu','lanmaji','ma','malu','maoniu','mashe','person','xuebao','yang','yanyang','zanghu','chai','hanta','huangmomao','lang','lv','pao','sheli','shidiao','zongxiong']
-
+    cate_class=['baichunlu','chihu','zanghu','maoniu','ma','mashe','yang','yanyang','person','xuebao','malu','lanmaji','gaoyuanshanchun','gaoyuantu', \
+        'lang','pao','shidiao','sheli','lv','chai','hanta','zongxiong','huangmomao',
+        'anfuxueji','banchishanchun','banweizhenji','chihu+shidiao','danfuxueji','gaoyuanxuetu','gou','hongcuiya','hongsun','hongzuishanya','hongweiqu','huangyou','huwujiu',
+        'kuang','laoshu','maque','niaolei','paolu','shanque','shiji','shitu','shu','shutu','wuya','xiangyou','xique','xuege','xueji','xuezhi','you',
+        'zongbeidong'
+        ]
     for index, row in tqdm(df.iterrows(), desc='Extracting data'):
         timu_data=json.loads(row['题目数据'])
         pic_id=row['题目ID']
@@ -189,4 +193,4 @@ def combine(dataset_list=['sup9-part1','top14-part1','top14-part2','top14-part3'
 if __name__ == "__main__":
     dataset_list=['sup9-part1','top14-part1','top14-part2','top14-part3',\
                 'top14-part4','top14-part5','top14-part6','xuebao-120-all','top14-part7','top14-part8']
-    combine(dataset_list=['top14-part8'],extract=True,visual=True)
+    combine(dataset_list=['rest-part1'],extract=True,visual=True)
