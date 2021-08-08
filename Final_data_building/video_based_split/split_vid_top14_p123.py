@@ -53,6 +53,7 @@ def main():
             for ID in train_index_all:
                 df.loc[ID,'label']='train'
             #print(df)
+            
             #break
         # df.to_csv(save_path,index=False)
 
