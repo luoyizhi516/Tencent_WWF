@@ -100,7 +100,7 @@ def extract_data(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
                     center_y=((topleft[1]+bottomright[1])/2)/imgy
                     w=abs(bottomright[0]-topleft[0])/imgx
                     h=abs(bottomright[1]-topleft[1])/imgy
-                    
+                    cate_class=cate_replacement(cate_class)
                     cate_id=cate_class.index(cate)
     
                     f.write(str(cate_id)+' '+str(center_x)+' '+str(center_y)+' '+str(w)+' '+str(h)+'\n')
