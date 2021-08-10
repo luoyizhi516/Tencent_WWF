@@ -20,11 +20,12 @@ def cate_replacement(cate_name):
         'kuang','shu','maque','niaolei','shanque','shiji','shitu','shutu','wuya','xique','xuege','xueji','xuezhi','you',
         'zongbeidong'
         ]
-        rename_class=['shu','gaoyuantu','chihu','hongzuiya','pao','xiangyoiu']
         ori_class=['laoshu','gaoyuanxuetu','chihu+shidiao','hongcuiya','paolu','huangyou']
-        for a,b in zip(ori_class,rename_class):
-            if cate_name ==a:
-                cate_name=b
+        rename_class=['shu','gaoyuantu','chihu','hongzuishanya','pao','xiangyou']
+        if cate_name in ori_class:
+            for a,b in zip(ori_class,rename_class):
+                if cate_name ==a:
+                    cate_name=b
         return cate_name
 
 def path_replacement(file_path,dataset_name):
@@ -100,7 +101,7 @@ def extract_data(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
                     center_y=((topleft[1]+bottomright[1])/2)/imgy
                     w=abs(bottomright[0]-topleft[0])/imgx
                     h=abs(bottomright[1]-topleft[1])/imgy
-                    cate_class=cate_replacement(cate_class)
+                    cate=cate_replacement(cate)
                     cate_id=cate_class.index(cate)
     
                     f.write(str(cate_id)+' '+str(center_x)+' '+str(center_y)+' '+str(w)+' '+str(h)+'\n')
@@ -220,4 +221,4 @@ def combine(dataset_list=['sup9-part1','top14-part1','top14-part2','top14-part3'
 if __name__ == "__main__":
     dataset_list=['sup9-part1','top14-part1','top14-part2','top14-part3',\
                 'top14-part4','top14-part5','top14-part6','xuebao-120-all','top14-part7','top14-part8']
-    combine(dataset_list=['rest-part2'],extract=True,visual=True)
+    combine(dataset_list=['rest-part1','rest-part2'],extract=True,visual=True)
