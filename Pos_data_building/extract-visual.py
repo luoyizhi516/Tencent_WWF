@@ -12,6 +12,21 @@ from xml.etree import ElementTree
 from PIL import Image, ImageDraw, ImageFont
 from collections import Counter
 
+def cate_replacement(cate_name):
+
+        cate_class=['baichunlu','chihu','zanghu','maoniu','ma','mashe','yang','yanyang','person','xuebao','malu','lanmaji','gaoyuanshanchun','gaoyuantu', \
+        'lang','pao','shidiao','sheli','lv','chai','hanta','zongxiong','huangmomao',
+        'anfuxueji','banchishanchun','banweizhenji','danfuxueji','gou','hongzuishanya','hongsun','honweiqu','xiangyou','huwujiu',
+        'kuang','shu','maque','niaolei','shanque','shiji','shitu','shutu','wuya','xique','xuege','xueji','xuezhi','you',
+        'zongbeidong'
+        ]
+        rename_class=['shu','gaoyuantu','chihu','hongzuiya','pao','xiangyoiu']
+        ori_class=['laoshu','gaoyuanxuetu','chihu+shidiao','hongcuiya','paolu','huangyou']
+        for a,b in zip(ori_class,rename_class):
+            if cate_name ==a:
+                cate_name=b
+        return cate_name
+
 def path_replacement(file_path,dataset_name):
     if dataset_name in ['top14-part2','top14-part1']:
         file_path=file_path.replace('/Raw_Data/','/Raw_Data/top14-p1-p2/',1)
@@ -35,10 +50,16 @@ def extract_data(dataset_name,data_set='D:/WWF_Det/WWF_Data/Raw_Data/'):
     csv_file='D:/WWF_Det/WWF_Det/Raw_annoations/'+dataset_name+'.csv'
     df=pd.read_csv(csv_file)
 
+    # cate_class=['baichunlu','chihu','zanghu','maoniu','ma','mashe','yang','yanyang','person','xuebao','malu','lanmaji','gaoyuanshanchun','gaoyuantu', \
+    #     'lang','pao','shidiao','sheli','lv','chai','hanta','zongxiong','huangmomao',
+    #     'anfuxueji','banchishanchun','banweizhenji','chihu+shidiao','danfuxueji','gaoyuanxuetu','gou','hongcuiya','hongsun','hongzuishanya','honweiqu','huangyou','huwujiu',
+    #     'kuang','laoshu','maque','niaolei','paolu','shanque','shiji','shitu','shu','shutu','wuya','xiangyou','xique','xuege','xueji','xuezhi','you',
+    #     'zongbeidong'
+    #     ]
     cate_class=['baichunlu','chihu','zanghu','maoniu','ma','mashe','yang','yanyang','person','xuebao','malu','lanmaji','gaoyuanshanchun','gaoyuantu', \
         'lang','pao','shidiao','sheli','lv','chai','hanta','zongxiong','huangmomao',
-        'anfuxueji','banchishanchun','banweizhenji','chihu+shidiao','danfuxueji','gaoyuanxuetu','gou','hongcuiya','hongsun','hongzuishanya','honweiqu','huangyou','huwujiu',
-        'kuang','laoshu','maque','niaolei','paolu','shanque','shiji','shitu','shu','shutu','wuya','xiangyou','xique','xuege','xueji','xuezhi','you',
+        'anfuxueji','banchishanchun','banweizhenji','danfuxueji','gou','hongzuishanya','hongsun','honweiqu','xiangyou','huwujiu',
+        'kuang','shu','maque','niaolei','shanque','shiji','shitu','shutu','wuya','xique','xuege','xueji','xuezhi','you',
         'zongbeidong'
         ]
     for index, row in tqdm(df.iterrows(), desc='Extracting data'):
