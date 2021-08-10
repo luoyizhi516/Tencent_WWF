@@ -99,5 +99,5 @@ def combine(dataset_list=['sup9-part1','top14-part1','top14-part2','top14-part3'
         if concat:concat_labels(dataset)
         if generation: data_generation(dataset)
 if __name__ == "__main__":
-    dataset_list=['top14-part7','top14-part8']
+    dataset_list=['rest-part1','rest-part2']
     combine(dataset_list=dataset_list,concat=True, generation=True)
