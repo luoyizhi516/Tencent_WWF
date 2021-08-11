@@ -13,13 +13,6 @@ from PIL import Image, ImageDraw, ImageFont
 from collections import Counter
 
 def cate_replacement(cate_name):
-
-        cate_class=['baichunlu','chihu','zanghu','maoniu','ma','mashe','yang','yanyang','person','xuebao','malu','lanmaji','gaoyuanshanchun','gaoyuantu', \
-        'lang','pao','shidiao','sheli','lv','chai','hanta','zongxiong','huangmomao',
-        'anfuxueji','banchishanchun','banweizhenji','danfuxueji','gou','hongzuishanya','hongsun','honweiqu','xiangyou','huwujiu',
-        'kuang','shu','maque','niaolei','shanque','shiji','shitu','shutu','wuya','xique','xuege','xueji','xuezhi','you',
-        'zongbeidong'
-        ]
         ori_class=['laoshu','gaoyuanxuetu','chihu+shidiao','hongcuiya','paolu','huangyou']
         rename_class=['shu','gaoyuantu','chihu','hongzuishanya','pao','xiangyou']
         if cate_name in ori_class:
