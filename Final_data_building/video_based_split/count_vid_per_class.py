@@ -31,4 +31,5 @@ df=pd.DataFrame(new_dict)
 df=df.sort_values(by="video_num" , ascending=False)
 df=df.reset_index().drop(['index'], axis=1)
 df.to_csv(r'D:\WWF_Det\WWF_Det\Final_data_stat\rest-cate\vid_stat.csv',index=False)
+
 print(df)
