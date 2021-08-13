@@ -89,5 +89,20 @@ for dataset in raw_data_list:
 
 
 #df.to_csv(r'D:\WWF_Det\WWF_Det\Final_data_stat\rest-cate\vid_stat.csv',index=False)
-df=pd.DataFrame(vid_dict)
-print(df)
+
+vid_df=pd.DataFrame(vid_dict)
+np.random.seed(2021)
+print(vid_df)
+for cate in video_cate:
+    index=vid_df.loc[vid_df['cate'] == cate].sample(frac=1).index.values.tolist()
+    print(index)
+    test_num=int(df.loc[df['cate']==cate]['video_num']*0.2)
+    print(test_num)
+    test_index_all=index[:test_num]
+    train_index_all=[i for i in index if i not in test_index_all]
+    for ID in test_index_all:
+        vid_df.loc[ID,'label']='test'
+    for ID in train_index_all:
+        vid_df.loc[ID,'label']='train'
+
+print(vid_df)
