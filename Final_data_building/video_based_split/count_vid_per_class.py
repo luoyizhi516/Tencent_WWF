@@ -19,14 +19,24 @@ def cate_replacement(cate_name):
                 if cate_name ==a:
                     cate_name=b
         return cate_name
-
+cate_class=['baichunlu','chihu','gaoyuanshanchun','gaoyuantu','lanmaji','ma','malu','maoniu','mashe','person','xuebao','yang','yanyang','zanghu','chai','hanta','huangmomao','lang','lv','pao','sheli','shidiao','zongxiong']
 Final_vid_base='D:/WWF_Det/WWF_Data/Final_Data/rest-vid-clean/'
 vid_list=os.listdir(Final_vid_base)
 cate_list=dict(Counter([cate_replacement(i.split('-')[0]) for i in vid_list]))
-new_dict={'cate':[],'video_num':[]}
+new_dict={'cate':[],'video_num':[],'split_condition':[]}
 for i in cate_list:
     new_dict['cate'].append(i)
     new_dict['video_num'].append(cate_list[i])
+
+    if i in cate_class:
+        split_cond='exist cate'
+    elif i not in cate_class:
+        if cate_list[i]>=15:
+            split_cond='video'
+        else:
+            split_cond='image'
+    new_dict['split_condition'].append(split_cond)
+    
 df=pd.DataFrame(new_dict)
 df=df.sort_values(by="video_num" , ascending=False)
 df=df.reset_index().drop(['index'], axis=1)
