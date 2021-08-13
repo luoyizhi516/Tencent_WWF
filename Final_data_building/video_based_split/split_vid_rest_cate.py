@@ -6,7 +6,7 @@ from numpy.lib.type_check import _imag_dispatcher
 import pandas as pd
 import shutil
 import numpy as np
-import cv2
+import cv2,glob
 import random
 from tqdm import tqdm
 import pyfastcopy
@@ -33,14 +33,14 @@ def cate_replacement(cate_name):
 
 source_vid_path_all=[]
 for dataset in combine_data_list:
-    source_vid_path_all=[]
+
     valuableset_dir=pos_data_base+dataset+'/allset/visualizations/'
     source_base=raw_data_base+dataset+'/'
     source_base=source_base.replace('part','p')
     annotation_dir=annotation_base+dataset+'.csv'
     df=pd.read_csv(annotation_dir)
     pic_id_list=[i.replace('.jpg','',1) for i in os.listdir(valuableset_dir)]
-    for pic_id in tqdm(pic_id_list):
+    for pic_id in (pic_id_list):
 
         pic_df=df.loc[df['题目ID']== int(pic_id)]
         timu_str=pic_df['题目数据'].values[0]
@@ -50,24 +50,44 @@ for dataset in combine_data_list:
         source_vid_path_all.append(source_base+vid_path)
             
 source_vid_path_all=np.unique(np.array(source_vid_path_all)).tolist()
+
 cate_list=dict(Counter([cate_replacement(i.split('/')[-3]) for i in source_vid_path_all]))
 new_dict={'cate':[],'video_num':[],'split_condition':[]}
+video_cate,image_cate,exist_cate=[],[],[]
 for i in cate_list:
     new_dict['cate'].append(i)
     new_dict['video_num'].append(cate_list[i])
 
     if i in cate_class:
         split_cond='exist cate'
+        exist_cate.append(i)
     elif i not in cate_class:
         if cate_list[i]>=15:
             split_cond='video'
+            video_cate.append(i)
         else:
             split_cond='image'
+            image_cate.append(i)
     new_dict['split_condition'].append(split_cond)
     
 df=pd.DataFrame(new_dict)
 df=df.sort_values(by="video_num" , ascending=False)
 df=df.reset_index().drop(['index'], axis=1)
-#df.to_csv(r'D:\WWF_Det\WWF_Det\Final_data_stat\rest-cate\vid_stat.csv',index=False)
 
+vid_dict={'video_path':[],'cate':[]
+    }
+raw_data_list=['rest-p1','rest-p2']
+for dataset in raw_data_list:
+    data_cate_list= os.listdir(raw_data_base + dataset)
+    for i in video_cate:
+        if i in data_cate_list:
+            vid_folder=raw_data_base+dataset+'/'+i+'/videos/'
+            vid_name=glob.glob(vid_folder+'*')
+            vid_dict['video_path']+=vid_name
+            vid_dict['cate']+=[i]*len(vid_name)
+
+
+
+#df.to_csv(r'D:\WWF_Det\WWF_Det\Final_data_stat\rest-cate\vid_stat.csv',index=False)
+df=pd.DataFrame(vid_dict)
 print(df)
