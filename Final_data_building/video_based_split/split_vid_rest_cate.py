@@ -16,7 +16,7 @@ pos_data_base='D:/WWF_Det/WWF_Data/Pos_Data/'
 raw_data_base='D:/WWF_Det/WWF_Data/Raw_Data/'
 
 annotation_base='D:/WWF_Det/WWF_Det/Raw_annoations/'
-cate_class=['baichunlu','chihu','gaoyuanshanchun','gaoyuantu','lanmaji','ma','malu','maoniu','mashe','person','xuebao','yang','yanyang','zanghu','chai','hanta','huangmomao','lang','lv','pao','sheli','shidiao','zongxiong']
+cate_class=['baichunlu','chihu','gaoyuanshanchun','1gaoyuantu','lanmaji','ma','malu','maoniu','mashe','person','xuebao','yang','yanyang','zanghu','chai','hanta','huangmomao','lang','lv','pao','sheli','shidiao','zongxiong']
 
 
 

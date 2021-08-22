@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
-from math import e, inf
+from math import e
 import os
+
 from numpy.lib.type_check import _imag_dispatcher
 import pandas as pd
 import shutil
@@ -15,47 +16,65 @@ from sklearn.model_selection import train_test_split
 
 
 def main():
-        #test
-        data_stat_path='D:\WWF_Det\WWF_Det\Raw_data_stat/top14-p1-p2-p3-merged/top14-p123-combine.csv'
-        critiria_path='D:/WWF_Det/WWF_Det/Raw_data_stat/top14-all/split_critiria.csv'
-        save_base='D:/WWF_Det/WWF_Det/Final_data_stat/top14-p123/'
-        if not os.path.exists(save_base): os.makedirs(save_base)
-        save_path=save_base+'video_split.csv'
-        df=pd.read_csv(data_stat_path)
-        df['label']=None
-        id_list=df.index.values.tolist()
-        df_cri=pd.read_csv(critiria_path)
-        cate_list=np.unique(df['cate'].values)
-        np.random.seed(2021)
+    pos_data_base='D:/WWF_Det/WWF_Data/Pos_Data/'
+    raw_data_base='D:/WWF_Det/WWF_Data/Raw_Data/top14-p1-p2-p3-merged/'
+    annotation_base='D:/WWF_Det/WWF_Det/Raw_annoations/'
+    vid_split_path='D:/WWF_Det/WWF_Det/Final_data_stat/top14-p123/video_split.csv'
+    split_file='D:/WWF_Det/WWF_Det/Final_data_stat/top14-p123/img_split2.csv'
+    Final_data_base='D:/WWF_Det/WWF_Data/Final_Data/top14-p123/'
+    train_img_dir,train_txt_dir=Final_data_base+'/train/images/',Final_data_base+'/train/labels/'
+    test_img_dir,test_txt_dir=Final_data_base+'/val/images/',Final_data_base+'/val/labels/'
+    if not os.path.exists(train_img_dir):os.makedirs(train_img_dir)
+    if not os.path.exists(train_txt_dir):os.makedirs(train_txt_dir)
+    if not os.path.exists(test_img_dir):os.makedirs(test_img_dir)
+    if not os.path.exists(test_txt_dir):os.makedirs(test_txt_dir)
+    data_dict={
+        'img_path':[],
+        'video_path':[],
+        'cate':[],
+        'modality':[],
+        'label':[]
+    }
+    combine_data_list=['top14-part1','top14-part2','top14-part3']
+    df_vid=pd.read_csv(vid_split_path)
+    for dataset in combine_data_list:
+        valuableset_dir=pos_data_base+dataset+'/valuableset/images/'
+        valuableset_txt_dir=pos_data_base+dataset+'/valuableset/labels/'
+        annotation_dir=annotation_base+dataset+'.csv'
+        df=pd.read_csv(annotation_dir)
+        pic_id_list=[i.replace('.jpg','',1) for i in os.listdir(valuableset_dir)]
         
-        for cate in cate_list:
-            
-            infra_index=df.loc[(df['cate'] == cate)&(df['modality'] == 'Infra')].sample(frac=1).index.values.tolist()
-            rgb_index=df.loc[(df['cate'] == cate)&(df['modality'] == 'RGB')].sample(frac=1).index.values.tolist()
-            infra_test_num=int(df_cri.loc[df_cri['cate']==cate]['infra_test'])
-            rgb_test_num=int(df_cri.loc[df_cri['cate']==cate]['rgb_test'])
-            infra_test_index=infra_index[:infra_test_num]
-            rgb_test_index=rgb_index[:rgb_test_num]
+        for pic_id in tqdm(pic_id_list):
 
-            test_index_all=list(infra_test_index+rgb_test_index)
+            pic_df=df.loc[df['题目ID']== int(pic_id)]
+            timu_str=pic_df['题目数据'].values[0]
+            timu_data=json.loads(timu_str)
+            video_path_list=timu_data['video_path'].split('/')
+            vid_path=video_path_list[-3]+'/'+video_path_list[-2]+'/'+video_path_list[-1]
+            pic_path=str(valuableset_dir+pic_id+'.jpg').replace('D:/WWF_Det/WWF_Data/Pos_Data/','')
+            vid_df=df_vid.loc[df_vid['video_path']==raw_data_base+vid_path]
+            label=vid_df['label'].values[0]
+            modality=vid_df['modality'].values[0]
+            cate=vid_df['cate'].values[0]
+            if label=='train':
+                shutil.copyfile(valuableset_dir+pic_id+'.jpg',train_img_dir+pic_id+'.jpg')
+                shutil.copyfile(valuableset_txt_dir+pic_id+'.txt',train_txt_dir+pic_id+'.txt')
+            elif label=='test':
+                shutil.copyfile(valuableset_dir+pic_id+'.jpg',test_img_dir+pic_id+'.jpg')
+                shutil.copyfile(valuableset_txt_dir+pic_id+'.txt',test_txt_dir+pic_id+'.txt')
+            data_dict['img_path'].append(pic_path)
+            data_dict['video_path'].append(vid_path)
+            data_dict['cate'].append(cate)
+            data_dict['modality'].append(modality)
+            data_dict['label'].append(label)
             
-            train_index_all=[i for i in infra_index+rgb_index if i not in test_index_all]
-            #print(len(test_index_all))
-            for ID in test_index_all:
+    df_store=pd.DataFrame(data_dict)
+    df_store.to_csv(split_file,index=False)
+    print(df_store)
+        #print(df_vid)
+        #break
+
             
-                df.loc[ID,'label']='test'
-                ori_dir=df.loc[ID,'video_path']
-                cate=df.loc[ID,'cate']
-                target_base=os.path.join('D:/WWF_Det/WWF_Data/Final_Data/valset-vid-v1/',cate)
-                target_dir=os.path.join(target_base,ori_dir.split('/')[-1])
-                if not os.path.exists(target_base): os.makedirs(target_base)
-                shutil.copyfile(ori_dir,target_dir)
-            for ID in train_index_all:
-                df.loc[ID,'label']='train'
-            #print(df)
-            
-            #break
-        # df.to_csv(save_path,index=False)
 
 if __name__ == "__main__":
     
