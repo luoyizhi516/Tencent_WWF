@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 from math import e
 import os
-
 from numpy.lib.type_check import _imag_dispatcher
 import pandas as pd
 import shutil
@@ -92,12 +91,10 @@ for dataset in raw_data_list:
 
 vid_df=pd.DataFrame(vid_dict)
 np.random.seed(2021)
-print(vid_df)
 for cate in video_cate:
     index=vid_df.loc[vid_df['cate'] == cate].sample(frac=1).index.values.tolist()
     print(index)
     test_num=int(df.loc[df['cate']==cate]['video_num']*0.2)
-    print(test_num)
     test_index_all=index[:test_num]
     train_index_all=[i for i in index if i not in test_index_all]
     for ID in test_index_all:
