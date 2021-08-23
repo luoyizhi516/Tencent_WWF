@@ -17,11 +17,11 @@ from sklearn.model_selection import train_test_split
 
 def main():
     pos_data_base='D:/WWF_Det/WWF_Data/Pos_Data/'
-    raw_data_base='D:/WWF_Det/WWF_Data/Raw_Data/top14-p1-p2-p3-merged/'
+    raw_data_base=['D:/WWF_Det/WWF_Data/Raw_Data/rest-p1/','D:/WWF_Det/WWF_Data/Raw_Data/rest-p2/']
     annotation_base='D:/WWF_Det/WWF_Det/Raw_annoations/'
-    vid_split_path='D:/WWF_Det/WWF_Det/Final_data_stat/top14-p123/video_split.csv'
-    split_file='D:/WWF_Det/WWF_Det/Final_data_stat/top14-p123/img_split2.csv'
-    Final_data_base='D:/WWF_Det/WWF_Data/Final_Data/top14-p123/'
+    vid_split_path='D:/WWF_Det/WWF_Det/Final_data_stat/rest-cate/vid_stat.csv'
+    split_file='D:/WWF_Det/WWF_Det/Final_data_stat/rest-rate/img_split.csv'
+    Final_data_base='D:/WWF_Det/WWF_Data/Final_Data/rest-part1/'
     train_img_dir,train_txt_dir=Final_data_base+'/train/images/',Final_data_base+'/train/labels/'
     test_img_dir,test_txt_dir=Final_data_base+'/val/images/',Final_data_base+'/val/labels/'
     if not os.path.exists(train_img_dir):os.makedirs(train_img_dir)
