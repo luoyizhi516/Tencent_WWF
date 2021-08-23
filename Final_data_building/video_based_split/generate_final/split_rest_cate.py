@@ -12,7 +12,11 @@ from tqdm import tqdm
 import pyfastcopy
 import json,sklearn
 from sklearn.model_selection import train_test_split
-
+def mkdirs(path):
+    try:
+        os.makedirs(path)
+    except:
+        pass
 
 
 def main():
