@@ -12,6 +12,7 @@ from tqdm import tqdm
 import pyfastcopy
 import json,sklearn
 from sklearn.model_selection import train_test_split
+
 def mkdirs(path):
     try:
         os.makedirs(path)
@@ -25,13 +26,13 @@ def main():
     annotation_base='D:/WWF_Det/WWF_Det/Raw_annoations/'
     vid_split_path='D:/WWF_Det/WWF_Det/Final_data_stat/rest-cate/vid_stat.csv'
     split_file='D:/WWF_Det/WWF_Det/Final_data_stat/rest-rate/img_split.csv'
-    Final_data_base='D:/WWF_Det/WWF_Data/Final_Data/rest-part1/'
+    Final_data_base='D:/WWF_Det/WWF_Data/Final_Data/rest-cate/'
     train_img_dir,train_txt_dir=Final_data_base+'/train/images/',Final_data_base+'/train/labels/'
     test_img_dir,test_txt_dir=Final_data_base+'/val/images/',Final_data_base+'/val/labels/'
-    if not os.path.exists(train_img_dir):os.makedirs(train_img_dir)
-    if not os.path.exists(train_txt_dir):os.makedirs(train_txt_dir)
-    if not os.path.exists(test_img_dir):os.makedirs(test_img_dir)
-    if not os.path.exists(test_txt_dir):os.makedirs(test_txt_dir)
+    mkdirs(train_img_dir)
+    mkdirs(train_txt_dir)
+    mkdirs(test_img_dir)
+    mkdirs(test_txt_dir)
     data_dict={
         'img_path':[],
         'video_path':[],
