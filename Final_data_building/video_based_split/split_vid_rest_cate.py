@@ -102,5 +102,5 @@ for cate in video_cate:
         vid_df.loc[ID,'label']='test'
     for ID in train_index_all:
         vid_df.loc[ID,'label']='train'
-
+    
 print(vid_df)
