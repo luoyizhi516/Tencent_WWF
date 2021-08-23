@@ -33,14 +33,14 @@ def main():
     mkdirs(train_txt_dir)
     mkdirs(test_img_dir)
     mkdirs(test_txt_dir)
+
     data_dict={
         'img_path':[],
         'video_path':[],
         'cate':[],
-        'modality':[],
         'label':[]
     }
-    combine_data_list=['top14-part1','top14-part2','top14-part3']
+    combine_data_list=['rest-part1','rest-part2']
     df_vid=pd.read_csv(vid_split_path)
     for dataset in combine_data_list:
         valuableset_dir=pos_data_base+dataset+'/valuableset/images/'
@@ -59,7 +59,6 @@ def main():
             pic_path=str(valuableset_dir+pic_id+'.jpg').replace('D:/WWF_Det/WWF_Data/Pos_Data/','')
             vid_df=df_vid.loc[df_vid['video_path']==raw_data_base+vid_path]
             label=vid_df['label'].values[0]
-            modality=vid_df['modality'].values[0]
             cate=vid_df['cate'].values[0]
             if label=='train':
                 shutil.copyfile(valuableset_dir+pic_id+'.jpg',train_img_dir+pic_id+'.jpg')
@@ -70,7 +69,6 @@ def main():
             data_dict['img_path'].append(pic_path)
             data_dict['video_path'].append(vid_path)
             data_dict['cate'].append(cate)
-            data_dict['modality'].append(modality)
             data_dict['label'].append(label)
             
     df_store=pd.DataFrame(data_dict)
